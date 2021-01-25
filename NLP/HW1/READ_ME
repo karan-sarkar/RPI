@@ -1,0 +1,22 @@
+90% accuracy of test data set.
+
+Running:
+Compile all the scripts at the top first. At the bottom, you can replace the
+upostag argument for xpostag to see fine grained tagging. You can also change
+the files from English to Spanish for testing.
+
+Suggestions:
+This tagger seems to have difficulty when the part of speech is not the most 
+common one for a particular word and when deducing the correct part of speech
+means examining a larger context. I would suggest using a probabilistic 
+version of CKY parsing to compensate. Instead of transition probabilities, you
+learn the probabilities two parts of speech merge. For example, consider the
+probability a verb and adverb merge to create a verb phrase. There would be
+probabilities each word becomes a specific part of speech. Then, you just
+use the CKY parsing algorithm to determine the most likely parse.
+
+Fine Tuning:
+I used a number of rules to improve performance on unknown words. For example, 
+anything that begins with a number should be a number. I used the average
+emission probability as a baseline. However, I set the emission probability
+to zero for closed classes.

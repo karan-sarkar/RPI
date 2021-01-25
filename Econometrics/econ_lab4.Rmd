@@ -1,0 +1,114 @@
+```{r}
+#Load Data
+library(ISLR)
+set.seed(1)
+data("Wage")
+```
+
+Run linear regression on training set.
+```{r}
+train <- sample(dim(Wage)[1], dim(Wage)[1]/2)
+cv_linear <- lm(wage~as.factor(education)+poly(age,1), data = Wage, subset = train)
+yhat_error_linear <- Wage$wage-predict(cv_linear, newdata = Wage)
+MSE_linear <- mean(yhat_error_linear[-train]^2)
+MSE_linear
+```
+
+Run quadratic regression on training set.
+```{r}
+train <- sample(dim(Wage)[1], dim(Wage)[1]/2)
+cv_quadratic <- lm(wage~as.factor(education)+poly(age,2), data = Wage, subset = train)
+yhat_error_quadratic <- Wage$wage-predict(cv_quadratic, newdata = Wage)
+MSE_quadratic <- mean(yhat_error_quadratic[-train]^2)
+MSE_quadratic
+```
+
+Run cubic regression on training set.
+```{r}
+train <- sample(dim(Wage)[1], dim(Wage)[1]/2)
+cv_cubic <- lm(wage~as.factor(education)+poly(age,1), data = Wage, subset = train)
+yhat_error_cubic <- Wage$wage-predict(cv_cubic, newdata = Wage)
+MSE_cubic <- mean(yhat_error_cubic[-train]^2)
+MSE_cubic
+```
+
+Generate k-folds
+```{r}
+set.seed(1)
+K <- 2
+fold <- sample(1:K,length(Wage$wage), replace = T)
+error <- Wage$wage
+```
+
+Run regression excluding fold 1
+```{r}
+wage_lm <- lm(wage~poly(age,1)+as.factor(education),data=Wage, subset = (fold != 1))
+wage_hat <- predict(wage_lm, newdata = Wage)
+error[fold == 1] <- (Wage$wage - wage_hat)[fold == 1]
+```
+
+Run regression excluding fold 2
+```{r}
+wage_lm <- lm(wage~poly(age,1)+as.factor(education),data=Wage, subset = (fold != 2))
+wage_hat <- predict(wage_lm, newdata = Wage)
+error[fold == 2] <- (Wage$wage - wage_hat)[fold == 2]
+```
+
+Calculate cross-validated MSE
+```{r}
+(1/K) * (mean(error[fold == 1]^2) + mean(error[fold == 2]^2))
+```
+
+Run regression excluding fold 1
+```{r}
+wage_quad_lm <- lm(wage~poly(age,2)+as.factor(education),data=Wage, subset = (fold != 1))
+wage_quad_hat <- predict(wage_quad_lm, newdata = Wage)
+error[fold == 1] <- (Wage$wage - wage_quad_hat)[fold == 1]
+```
+
+Run regression excluding fold 2
+```{r}
+wage_quad_lm <- lm(wage~poly(age,2)+as.factor(education),data=Wage, subset = (fold != 2))
+wage_quad_hat <- predict(wage_quad_lm, newdata = Wage)
+error[fold == 2] <- (Wage$wage - wage_quad_hat)[fold == 2]
+```
+
+Calculate cross-validated MSE
+```{r}
+(1/K) * (mean(error[fold == 1]^2) + mean(error[fold == 2]^2))
+```
+
+
+Run regression excluding fold 1
+```{r}
+wage_cubic_lm <- lm(wage~poly(age,3)+as.factor(education),data=Wage, subset = (fold != 1))
+wage_cubic_hat <- predict(wage_cubic_lm, newdata = Wage)
+error[fold == 1] <- (Wage$wage - wage_cubic_hat)[fold == 1]
+```
+
+Run regression excluding fold 2
+```{r}
+wage_cubic_lm <- lm(wage~poly(age,3)+as.factor(education),data=Wage, subset = (fold != 2))
+wage_cubic_hat <- predict(wage_cubic_lm, newdata = Wage)
+error[fold == 2] <- (Wage$wage - wage_cubic_hat)[fold == 2]
+```
+
+Calculate cross-validated MSE
+```{r}
+(1/K) * (mean(error[fold == 1]^2) + mean(error[fold == 2]^2))
+```
+
+```{r}
+set.seed(1)
+library(boot)
+for (i in 1:4) {
+  wage_glm <- glm(wage~poly(age,i)+as.factor(education), data=Wage)
+  cv.err <- cv.glm(data=Wage,glmfit = wage_glm, K = 5)
+  print(cv.err$delta[1])
+}
+```
+
+
+
+
+

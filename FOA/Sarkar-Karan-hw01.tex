@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath, amsthm}
+\usepackage[shortlabels]{enumitem}
+\newtheorem{problem}{Problem}
+
+\title{Homework 1}
+\author{Karan Sarkar \\ sarkak2@rpi.edu}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+ Let A, B and C be subsets of a universal set $U.$ Prove that 
+ $$(A \cup B)\setminus C = (A \setminus C) \cup (B \setminus C).$$
+\end{problem}
+\begin{proof}
+To show that $(A \cup B)\setminus C = (A \setminus C) \cup (B \setminus C)$, we must show that:
+\begin{enumerate}[(i)]
+    \item $(A \cup B)\setminus C \subseteq (A \setminus C) \cup (B \setminus C)$
+    \item $(A \setminus C) \cup (B \setminus C) \subseteq (A \cup B)\setminus C$
+\end{enumerate}
+We will begin with (i). Assume that $(A \cup B)\setminus C$ is not empty in which case (i) is vacuously true. Let $x \in (A \cup B)\setminus C$. From the complement, we have that $x \in A \cup B$ and $x \not \in C$. Therefore, $x \in A$ or $x \in B$. We will consider two cases.
+\begin{enumerate}
+    \item Assume that $x \in A$. Note that from before we have that $x \not \in C$. Because $x \in A$ and $x \not \in C$, we have that $x \in A \setminus C$.
+    \item Assume that $x \in B$. Note that from before we have that $x \not \in C$. Because $x \in B$ and $x \not \in C$, we have that $x \in B \setminus C$.
+\end{enumerate}
+Therefore, we have that $x \in A \setminus C$ or $x \in B \setminus C$. Thus, $x \in (A \setminus C) \cup (B \setminus C)$. It now follows that $(A \cup B)\setminus C \subseteq (A \setminus C) \cup (B \setminus C)$.
+
+We will now handle (ii). Assume that $(A \setminus C) \cup (B \setminus C)$ is not empty in which case (ii) is vacuously true. Let $x \in (A \setminus C) \cup (B \setminus C)$. From the union, we have that $x \in A \setminus C$ or $x \in B \setminus C$. We will consider two cases.
+\begin{enumerate}
+    \item Assume that $x \in A \setminus C$. From the complement, we have that $x \in A$ and $x \not \in C$.
+    \item Assume that $x \in B \setminus C$. From the complement, we have that $x \in B$ and $x \not \in C$.
+\end{enumerate}
+First, note that from the two cases $x \in A$ or $x \in B$. Therefore, $x \in A \cup B$. Second, note that in both cases $x \not \in C$. Because $x \in A \cup B$ and $x \not \in C$, it follows that $x \in (A \cup B)\setminus C$. Thus, $(A \setminus C) \cup (B \setminus C) \subseteq (A \cup B)\setminus C$. Because, we have now proven both (i) and (ii), it follows that $(A \cup B)\setminus C = (A \setminus C) \cup (B \setminus C)$.
+\end{proof}
+
+$U\setminus(A \setminus B) = (U\setminus A)\cup B.$
+
+\begin{problem}
+ Let A and B be subsets of a universal set $U.$ Prove 
+ $$ U\setminus(A \setminus B) = (U\setminus A)\cup B.$$  
+\end{problem}
+\begin{proof}
+ To show that $U\setminus(A \setminus B) = (U\setminus A)\cup B$, we must show that:
+\begin{enumerate}[(i)]
+    \item $U\setminus(A \setminus B) \subseteq (U\setminus A)\cup B$.
+    \item $(U\setminus A)\cup B \subseteq U\setminus(A \setminus B)$.
+\end{enumerate}
+We will begin with (i). Assume that $U\setminus(A \setminus B)$ is not empty which case (i) is vacuously true. Let $x \in U\setminus(A \setminus B)$. From the complement, we have that $x \in U$ and $x \not \in A \setminus B$. From the complement again, we have that it is not true that $x \in A$ and $x \not \in B$. By DeMorgan's Law, we now have that $x \not \in A$ or $x \in B$. We will consider two cases.
+\begin{enumerate}
+    \item Assume that $x \not \in A$. We already know that $x \in U$. From the definition of set complement, we have that $x \in U \setminus A$.
+    \item In this case, we assume that $x \in B$ and that will suffice.
+\end{enumerate}
+From the two cases, we see that $x \in U \setminus A$ or $x \in B$. Therefore, $x \in (U \setminus A) \cup B$. Therefore, it now follows that $U\setminus(A \setminus B) \subseteq (U\setminus A)\cup B$.
+
+We will now handle (ii). Assume that $(U \setminus A)\cup B$ is not empty in which case (ii) is vacuously true. Let $x \in (U\setminus A)\cup B$. From the union, we have that $x \in U \setminus A$ or $x \in B$. We will consider two cases.
+\begin{enumerate}
+    \item Assume that $x \in U \setminus A$. From the complement, we have that $x \in U$ and $x \not \in A$. Consider the set $A \setminus B$. For any element $y \in A \setminus B$, we have that $y \in A$ and $y \not \in B$. Therefore, because $x \not \in A$, it follows that $x \not \in A \setminus B$.
+    \item Assume that $x \in B$. Consider the set $A \setminus B$. For any element $y \in A \setminus B$, we have that $y \in A$ and $y \not \in B$. Therefore, because $x \in B$, it follows that $x \not \in A \setminus B$. Because $B \subset U$, also follows that $x \in U$.
+\end{enumerate}
+Note that in both cases, we have $x \in U$ and $x \not \in A \setminus B$. Thus, $x \in U \setminus (A \setminus B)$. Thus, $(U\setminus A)\cup B \subseteq U\setminus(A \setminus B)$. Because, we have now proven both (i) and (ii), $U\setminus(A \setminus B) = (U\setminus A)\cup B$.
+\end{proof}
+
+\end{document}

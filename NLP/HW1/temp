@@ -1,0 +1,52 @@
+class hmm_tagger:
+    def __init__(self, file_name, pos_tag):
+        data_file = io.open(file_name, "r", encoding="utf-8")
+        self.sentences = []
+        for sentence in conllu.parse_incr(data_file):
+            self.sentences.append(sentence)
+        self.pos_tag = pos_tag
+        self.tag_counts = pandas.DataFrame({'START': [0], 'END': [0]}, index = ['COUNT'])
+        self.trans_probs = pandas.DataFrame()
+        self.emiss_probs = pandas.DataFrame()
+        
+    def _calc_emiss_probs(self):
+        print ("Started Words")
+        words = []
+        for sentence in tqdm.tqdm(self.sentences):
+            for word in sentence:
+                words.append(word['lemma'])
+        print("Finished Words")
+        print("Started Emission Probabilities")
+        self.emiss_probs = pandas.DataFrame(index = words, columns = list(self.tag_counts))
+        self.emiss_probs.fillna(value = 0, inplace = True)
+        for sentence in tqdm.tqdm(self.sentences):
+            for word in sentence:
+                self.emiss_probs.loc[word['lemma'], word[self.pos_tag]] += 1
+        self.emiss_probs = self.emiss_probs / self.tag_counts
+        print("Finished Emission Probabilities")
+                
+
+    def _calc_trans_probs(self):
+        print("Started Transition Probabilities")
+        self.trans_probs = pandas.DataFrame(index = list(self.tag_counts), columns = list(self.tag_counts))
+        self.trans_probs.fillna(value = 0, inplace = True)
+        for sentence in tqdm.tqdm(self.sentences):
+            self.trans_probs.loc['START', sentence[0][self.pos_tag]] += 1
+            self.trans_probs.loc[sentence[-1][self.pos_tag], 'END'] += 1
+            for i in range(len(sentence) - 1):
+                self.trans_probs.loc[sentence[i][self.pos_tag], sentence[i + 1][self.pos_tag]] += 1
+        self.trans_probs = self.trans_probs.div(self.tag_counts.transpose()['COUNT'], axis = 0)
+        print("Finished Transition Probabilities")
+        
+
+    def _count_tags(self):
+        print("Started Tags Counts")
+        for sentence in tqdm.tqdm(self.sentences):
+            self.tag_counts.loc['COUNT', 'START'] += 1
+            self.tag_counts.loc['COUNT', 'END'] += 1
+            for word in sentence:
+                if word[self.pos_tag] not in list(self.tag_counts):
+                    self.tag_counts[word[self.pos_tag]] = 1
+                else:
+                    self.tag_counts.loc['COUNT', word[self.pos_tag]] += 1
+        print("Finished Tags Counts")

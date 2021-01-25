@@ -1,0 +1,67 @@
+-- VERSION_5
+-- START DISKCACHE_2
+C:\Users\Karan Sarkar\Google Drive\RPI\Graph Mining\.metadata\.plugins\org.eclipse.core.resources\.projects\HW\com.python.pydev.analysis\v2_indexcache
+scale_free_exploration|1582165439432089000|C:\Users\Karan Sarkar\Google Drive\RPI\Graph Mining\HW\scale_free_exploration.py
+hw1|1580356260352612000|C:\Users\Karan Sarkar\Google Drive\RPI\Graph Mining\HW\hw1.py
+-- END DISKCACHE
+-- START DICTIONARY
+4
+2=scale_free_exploration
+4=hw1
+1=C:\Users\Karan Sarkar\Google Drive\RPI\Graph Mining\HW\scale_free_exploration.py
+3=C:\Users\Karan Sarkar\Google Drive\RPI\Graph Mining\HW\hw1.py
+-- END DICTIONARY
+-- START TREE 1
+48
+_ma|0|
+_to|0|
+a|1|a!1^36#1*19@
+a_m|0|
+a_p|0|
+a_t|0|
+ada|0|
+ama|0|
+b|1|b!1^37#1*19@
+bic|1|biconnect!3^98#5*34@
+bow|1|bow_tie!3^40#5*34@
+bw|0|
+bw_|0|
+c|0|
+c_c|0|
+c_m|0|
+c_p|0|
+c_t|0|
+cen|1|centrality_measures!1^23#5*18@
+cl|0|
+cl_|0|
+cm|1|cm!1^35#1*19@
+con|0|
+edg|2|edges!1^11#1*19@edges!3^28#1*35@
+enr|2|enron!3^38#1*35@enron!1^21#1*19@
+gnu|2|gnutella!3^36#1*35@gnutella!1^19#1*19@
+has|0|
+i|0|
+imm|0|
+inf|0|
+jac|0|
+mea|1|measure!3^106#5*34@
+p|1|p!1^41#1*19@
+p_m|0|
+p_p|0|
+p_t|0|
+pow|2|power!3^37#1*35@power!1^20#1*19@
+pre|0|
+sta|0|
+t|0|
+t_m|0|
+t_p|0|
+t_t|0|
+tem|0|
+tim|0|
+tok|2|tokens!3^31#9*35@tokens!1^14#9*19@
+wik|2|wiki!1^18#1*19@wiki!3^35#1*35@
+z|1|z!1^40#1*19@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

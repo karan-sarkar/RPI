@@ -1,0 +1,59 @@
+Wikipedia, simple en (dynamic)  network, part of the Koblenz Network Collection
+===========================================================================
+
+This directory contains the TSV and related files of the link-dynamic-simplewiki network:
+
+This network shows the evolution of hyperlinks between artikels of the Simple English Wikipedia. The nodes represent articles. An edge indicates that a hyperlink was added or removed depending on the edge weight (-1 for removal or +1 for addition).
+
+
+More information about the network is provided here: 
+http://konect.uni-koblenz.de/networks/link-dynamic-simplewiki
+
+Files: 
+    meta.link-dynamic-simplewiki -- Metadata about the network 
+    out.link-dynamic-simplewiki -- The adjacency matrix of the network in space separated values format, with one edge per line
+      The meaning of the columns in out.link-dynamic-simplewiki are: 
+        First column: ID of from node 
+        Second column: ID of to node
+        Third column: edge weight
+        Fourth column: timestamp of the edge
+
+
+Complete documentation about the file format can be found in the KONECT
+handbook, in the section File Formats, available at:
+
+http://konect.uni-koblenz.de/publications
+
+All files are licensed under a Creative Commons Attribution-ShareAlike 2.0 Germany License.
+For more information concerning license visit http://konect.uni-koblenz.de/license.
+
+
+
+Use the following References for citation:
+
+@MISC{konect:2016:link-dynamic-simplewiki,
+    title = {Wikipedia, simple en (dynamic)  network dataset -- {KONECT}},
+    month = oct,
+    year = {2016},
+    url = {http://konect.uni-koblenz.de/networks/link-dynamic-simplewiki}
+}
+
+@inproceedings{konect:unlink,
+	author = {Preusse, Julia and Kunegis, Jérôme and Thimm, Matthias and Gottron, Thomas and Staab, Steffen},
+	title = {Structural Dynamics of Knowledge Networks},
+	booktitle = {Proc. Int. Conf. on Weblogs and Social Media},
+	year = {2013},
+}
+
+
+@inproceedings{konect,
+	title = {{KONECT} -- {The} {Koblenz} {Network} {Collection}},
+	author = {Jérôme Kunegis},
+	year = {2013},
+	booktitle = {Proc. Int. Conf. on World Wide Web Companion},
+	pages = {1343--1350},
+	url = {http://userpages.uni-koblenz.de/~kunegis/paper/kunegis-koblenz-network-collection.pdf}, 
+	url_presentation = {http://userpages.uni-koblenz.de/~kunegis/paper/kunegis-koblenz-network-collection.presentation.pdf},
+}
+
+

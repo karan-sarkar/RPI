@@ -1,0 +1,109 @@
+---
+title: "Data Analytics Assignment 3"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+nyt2 <- read.csv("G:\\My Drive\\RPI\\Data Analytics\\nyt2.csv")
+nyt3 <- read.csv("G:\\My Drive\\RPI\\Data Analytics\\nyt3.csv")
+nyt4 <- read.csv("G:\\My Drive\\RPI\\Data Analytics\\nyt4.csv")
+nyt5 <- read.csv("G:\\My Drive\\RPI\\Data Analytics\\nyt5.csv")
+nyt6 <- read.csv("G:\\My Drive\\RPI\\Data Analytics\\nyt6.csv")
+```
+
+(a)
+```{r}
+boxplot(nyt2$Age, nyt3$Age, nyt3$Age, nyt4$Age, nyt5$Age, nyt6$Age, main = "AGE")
+boxplot(nyt2$Impressions, nyt3$Impressions, nyt3$Impressions, nyt4$Impressions, nyt5$Impressions, nyt6$Impressions, main = "IMPRESSIONS")
+```
+The distribution of ages is essentially constant across the datasets. The median age is around 30, but the distribution is skewed towards the higher numbers. The distribution of impressions is also essentially constant across the different datasets. The median number of impressions is around 5 and it is also skewed to the higher numbers.
+
+
+(b,c)
+We will first analyze the ages then the impressions. Each variable will go through parts b and c.
+
+(Age)
+```{r}
+hist(nyt2$Age)
+hist(nyt3$Age)
+hist(nyt4$Age)
+hist(nyt5$Age)
+hist(nyt6$Age)
+```
+A large number of the ages are zero. This probably means that missing ages are represented by a zero. We will filter out the zeroes.
+
+```{r}
+library(fitdistrplus)
+fit2 <- fitdist(nyt2$Age[nyt2$Age > 0], "gamma")
+fit3 <- fitdist(nyt3$Age[nyt3$Age > 0], "gamma")
+fit4 <- fitdist(nyt4$Age[nyt4$Age > 0], "gamma")
+fit5 <- fitdist(nyt5$Age[nyt5$Age > 0], "gamma")
+fit6 <- fitdist(nyt6$Age[nyt6$Age > 0], "gamma")
+rbind(fit2$estimate,fit3$estimate,fit4$estimate,fit5$estimate,fit6$estimate)
+
+```
+
+The shape and rate values seem to be relatively constant. The shape which essentially controls the skewness seems to fluctuate a little. NYT 6 seems be more skewed than NYT 4. On the whole all of the distributions are skewed right about approximately the same mean.
+
+```{r}
+plotdist(nyt2$Age[nyt2$Age > 0],"gamma",para=as.list(fit2$estimate))
+plotdist(nyt3$Age[nyt3$Age > 0],"gamma",para=as.list(fit3$estimate))
+plotdist(nyt4$Age[nyt4$Age > 0],"gamma",para=as.list(fit4$estimate))
+plotdist(nyt5$Age[nyt5$Age > 0],"gamma",para=as.list(fit5$estimate))
+plotdist(nyt6$Age[nyt6$Age > 0],"gamma",para=as.list(fit6$estimate))
+```
+The distribution of ages is modeled well by the Gamma distribution. We can see that the distribution is skewed to the right in the QQ-plot; the empirical quantiles start to fall behind the theoretical quantiles. The PP-plot shows that the Gamma distribution is a good fit for the data as it is mostly linear. We can see that the Gamma distribution underestimates the number of people from 20-40.
+
+
+(Impressions)
+```{r}
+hist(nyt2$Impressions)
+hist(nyt3$Impressions)
+hist(nyt4$Impressions)
+hist(nyt5$Impressions)
+hist(nyt6$Impressions)
+```
+A large number of the ages are zero. This probably means that missing ages are represented by a zero. We will filter out the zeroes.
+
+(Impressions)
+
+```{r}
+hist(nyt2$Impressions)
+hist(nyt3$Impressions)
+hist(nyt4$Impressions)
+hist(nyt5$Impressions)
+hist(nyt6$Impressions)
+```
+
+```{r}
+library(fitdistrplus)
+fit2 <- fitdist(nyt2$Impressions, "pois")
+fit3 <- fitdist(nyt3$Impressions, "pois")
+fit4 <- fitdist(nyt4$Impressions, "pois")
+fit5 <- fitdist(nyt5$Impressions, "pois")
+fit6 <- fitdist(nyt6$Impressions, "pois")
+rbind(fit2$estimate,fit3$estimate,fit4$estimate,fit5$estimate,fit6$estimate)
+
+```
+
+The number of impressions fits the Poisson distribution very similarly for each the dataset. The number of impresssions is almost certianly from the same distribution.
+
+```{r}
+plotdist(nyt2$Impressions,"pois",para=as.list(fit2$estimate), discrete = FALSE)
+plotdist(nyt3$Impressions,"pois",para=as.list(fit3$estimate), discrete = FALSE)
+plotdist(nyt4$Impressions,"pois",para=as.list(fit4$estimate), discrete = FALSE)
+plotdist(nyt5$Impressions,"pois",para=as.list(fit5$estimate), discrete = FALSE)
+plotdist(nyt6$Impressions,"pois",para=as.list(fit6$estimate), discrete = FALSE)
+```
+The distribution of impressions is modeled extrenely well by the Poisson distribution. We can see this in the QQ-plot which is completely linear. Moreover, the ECDF is almost identical to the theoretical CDF. 
+
+
+(d)
+```{r}
+t.test(nyt2$Impressions, nyt3$Impressions)
+```
+Our null hypothesis was that the average number of impressions was the same in both nyt2 and nyt3. We ran a two sample t-test to check this hypothesis. We got a p-value of 0.5533 which means that the observed average number of impressions is consistent with our null hypothesis of equal means. Therefore, we fail to reject our null hypothesis.

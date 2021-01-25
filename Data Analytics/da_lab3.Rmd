@@ -1,0 +1,95 @@
+```{r}
+bronx_housing <- read.xlsx("rollingsales_bronx.xlsx", sheetName = "Bronx")
+
+bronx_housing <- bronx_housing[bronx_housing$YEAR.BUILT != 0,]
+bronx_housing <- bronx_housing[bronx_housing$SALE.PRICE != 0,]
+bronx_housing <- bronx_housing[bronx_housing$GROSS.SQUARE.FEET != 0,]
+bronx_housing <- bronx_housing[bronx_housing$LAND.SQUARE.FEET != 0,]
+```
+
+```{r}
+plot(density(log10(bronx_housing$RESIDENTIAL.UNITS)))
+quant_bronx_housing<- as.data.frame(log10(bronx_housing$RESIDENTIAL.UNITS + 1))
+colnames(quant_bronx_housing)[1] <- "LOG_RESIDENTIAL_UNITS"
+quant_bronx_housing$LOG_GROSS_SQUARE_FEET <- log10(bronx_housing$GROSS.SQUARE.FEET + 1)
+quant_bronx_housing$COMMERCIAL_UNIT <- log10(bronx_housing$COMMERCIAL.UNITS + 1)
+quant_bronx_housing$LOG_LAND_SQUARE_FEET <- log10(bronx_housing$LAND.SQUARE.FEET + 1)
+quant_bronx_housing$YEAR_BUILT <- bronx_housing$YEAR.BUILT
+quant_bronx_housing$LOG_SALE_PRICE <- log10(bronx_housing$SALE.PRICE + 1)
+
+```
+
+```{r}
+library(ggplot2)
+pairs(quant_bronx_housing)
+```
+
+```{r}
+clusters <- kmeans(scale(quant_bronx_housing), centers = 2)
+pairs(quant_bronx_housing, col = clusters$cluster)
+```
+
+```{r}
+hist(quant_bronx_housing[clusters$cluster == 2,]$YEAR_BUILT)
+hist(quant_bronx_housing[clusters$cluster == 1,]$YEAR_BUILT)
+```
+
+
+
+
+
+
+```{r}
+lin.mod <- lm(LOG_SALE_PRICE~., quant_bronx_housing)
+summary(lin.mod)
+```
+
+
+
+
+
+
+
+
+
+
+```{r}
+library(randomForest)
+library(forestFloor)
+        
+rfo = randomForest(
+  LOG_SALE_PRICE~.,
+  quant_bronx_housing,
+  keep.inbag = TRUE, 
+  importance = TRUE,  
+  sampsize = 1500 ,
+  ntree = 100
+)
+```
+
+```{r}
+rf.df <- data.frame(x= rfo$predicted, y= quant_bronx_housing$LOG_SALE_PRICE)
+summary(lm(y~.,rf.df))
+```
+
+```{r}
+ff = forestFloor(
+  rf.fit = rfo,       # mandatory
+  X = quant_bronx_housing,              # mandatory
+  calc_np = FALSE,    # TRUE or FALSE both works, makes no difference
+  binary_reg = FALSE  # takes no effect here when rfo$type="regression"
+)
+
+
+```
+
+
+
+
+```{r}
+plot(ff,  col = fcol(ff,1,orderByImportance=FALSE)    ,                 # forestFloor object
+     orderByImportance=TRUE    # if TRUE index sequence by importance, else by X column  
+)
+```
+
+

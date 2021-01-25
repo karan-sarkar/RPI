@@ -1,0 +1,20 @@
+```{r}
+library(ISLR)
+data("Default")
+```
+
+```{r}
+log_mod <- glm(default ~ income + balance, family = "binomial", data = Default)
+```
+
+```{r}
+sample <- sample(1:nrow(Default))
+train <- Default[sample,][1:nrow(Default)/2,]
+test <- Default[sample,][nrow(Default)/2:nrow(Default),]
+log_mod <- glm(default ~ income + balance, family = "binomial", data = train)
+preds <- predict(log_mod, test, type = "response") > 0.5
+testing_error <- 1- mean(xor(as.numeric(preds), as.numeric(test$default)))
+testing_error
+```
+
+

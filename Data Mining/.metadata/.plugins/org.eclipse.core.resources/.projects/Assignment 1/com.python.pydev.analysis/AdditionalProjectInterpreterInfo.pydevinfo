@@ -1,0 +1,30 @@
+-- VERSION_5
+-- START DISKCACHE_2
+C:\Users\Karan Sarkar\Google Drive\RPI\Data Mining\.metadata\.plugins\org.eclipse.core.resources\.projects\Assignment 1\com.python.pydev.analysis\v2_indexcache
+assign1|1569121086199852000|C:\Users\Karan Sarkar\Google Drive\RPI\Data Mining\Assignment 1\assign1.py
+-- END DISKCACHE
+-- START DICTIONARY
+2
+1=C:\Users\Karan Sarkar\Google Drive\RPI\Data Mining\Assignment 1\assign1.py
+2=assign1
+-- END DICTIONARY
+-- START TREE 1
+14
+X|1|X!1^27#1*19@
+cen|1|centered!1^39#1*19@
+cos|2|cosines!1^66#1*19@cos!1^11#5*18@
+dat|1|DATA_FILE!1^1#1*19@
+eig|1|eigenvector!1^80#1*19@
+eps|1|epsilon!1^2#1*19@
+err|1|err!1^81#1*19@
+inn|2|inner!1^4#5*18@inner_covariance!1^51#1*19@
+mea|1|mean!1^30#1*19@
+out|3|outer_products!1^58#1*19@outer!1^19#5*18@outer_covariance!1^57#1*19@
+pro|1|proj!1^90#1*19@
+sum|1|sum!1^32#5*19@
+tem|1|temp!1^83#5*19@
+var|1|variance!1^44#1*19@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

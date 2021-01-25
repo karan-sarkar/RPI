@@ -1,0 +1,2 @@
+model_checkpoint_path: "struct_decoder_1"
+all_model_checkpoint_paths: "struct_decoder_1"

@@ -1,0 +1,24 @@
+-- VERSION_5
+-- START DISKCACHE_2
+C:\Users\Karan Sarkar\Google Drive\RPI\NLP\.metadata\.plugins\org.eclipse.core.resources\.projects\HW3\com.python.pydev.analysis\v2_indexcache
+EntityLinking|1553551305664754000|C:\Users\Karan Sarkar\Google Drive\RPI\NLP\HW3\EntityLinking.py
+-- END DISKCACHE
+-- START DICTIONARY
+2
+2=EntityLinking
+1=C:\Users\Karan Sarkar\Google Drive\RPI\NLP\HW3\EntityLinking.py
+-- END DICTIONARY
+-- START TREE 1
+8
+amr|1|amr_knowledge_graph!1^8#1*19@
+jac|1|jaccard_sim!1^17#5*18@
+kb|1|kb!1^11#1*19@
+key|1|keys!1^15#1*19@
+kno|1|knowledge_base!1^12#1*19@
+log|1|log_jaccard_sim!1^24#5*18@
+mcd|1|mcdonnell_article!1^10#1*19@
+sol|1|sols!1^31#1*19@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

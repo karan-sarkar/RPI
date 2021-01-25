@@ -1,0 +1,1 @@
+python preprocess_data.py --json_split_path "C:\Users\Karan Sarkar\Google Drive\RPI\NLP\Assignment4\caption_datasets\dataset_coco.json" --image_dir "C:\Users\Karan Sarkar\Google Drive\RPI\NLP\Assignment4\val2014\" --data_dir "C:\Users\Karan Sarkar\Google Drive\RPI\NLP\Assignment4\"

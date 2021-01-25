@@ -1,0 +1,1 @@
+A tree is an abstract graphical design that starts with a single stalk which splits into thinner offshoots. Each offshoot resembles the original tree.

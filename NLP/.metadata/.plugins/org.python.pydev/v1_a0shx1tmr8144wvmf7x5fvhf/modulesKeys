@@ -1,0 +1,471 @@
+MODULES_MANAGER_V2
+Image
+OpenGL
+_abc
+_ast
+_bisect
+_blake2
+_bytesio
+_codecs
+_codecs_cn
+_codecs_hk
+_codecs_iso2022
+_codecs_jp
+_codecs_kr
+_codecs_tw
+_collections
+_csv
+_datetime
+_fileio
+_functools
+_heapq
+_hotshot
+_imp
+_io
+_json
+_locale
+_lsprof
+_md5
+_multibytecodec
+_opcode
+_operator
+_pickle
+_random
+_sha
+_sha1
+_sha256
+_sha3
+_sha512
+_signal
+_sre
+_stat
+_string
+_struct
+_subprocess
+_symtable
+_thread
+_tracemalloc
+_warnings
+_weakref
+_winapi
+_winreg
+array
+atexit
+audioop
+binascii
+builtins
+cPickle
+cStringIO
+cmath
+cv2
+datetime
+email
+errno
+exceptions
+faulthandler
+future_builtins
+gc
+gi
+hashlib
+imageop
+imp
+itertools
+marshal
+math
+mmap
+mock
+msvcrt
+multiprocessing
+mutagen
+nt
+numpy
+numpy.__config__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\__config__.py
+numpy.__init__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\__init__.py
+numpy._distributor_init|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\_distributor_init.py
+numpy._globals|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\_globals.py
+numpy._pytesttester|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\_pytesttester.py
+numpy.compat.__init__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\compat\__init__.py
+numpy.compat._inspect|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\compat\_inspect.py
+numpy.compat.py3k|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\compat\py3k.py
+numpy.compat.setup|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\compat\setup.py
+numpy.compat.tests.__init__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\compat\tests\__init__.py
+numpy.compat.tests.test_compat|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\compat\tests\test_compat.py
+numpy.conftest|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\conftest.py
+numpy.core.__init__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\__init__.py
+numpy.core._add_newdocs|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\_add_newdocs.py
+numpy.core._aliased_types|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\_aliased_types.py
+numpy.core._dtype|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\_dtype.py
+numpy.core._dtype_ctypes|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\_dtype_ctypes.py
+numpy.core._dummy|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\_dummy.cp37-win_amd64.pyd
+numpy.core._internal|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\_internal.py
+numpy.core._methods|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\_methods.py
+numpy.core._multiarray_tests|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\_multiarray_tests.cp37-win_amd64.pyd
+numpy.core._multiarray_umath|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\_multiarray_umath.cp37-win_amd64.pyd
+numpy.core._operand_flag_tests|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\_operand_flag_tests.cp37-win_amd64.pyd
+numpy.core._rational_tests|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\_rational_tests.cp37-win_amd64.pyd
+numpy.core._string_helpers|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\_string_helpers.py
+numpy.core._struct_ufunc_tests|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\_struct_ufunc_tests.cp37-win_amd64.pyd
+numpy.core._type_aliases|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\_type_aliases.py
+numpy.core._umath_tests|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\_umath_tests.cp37-win_amd64.pyd
+numpy.core.arrayprint|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\arrayprint.py
+numpy.core.cversions|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\cversions.py
+numpy.core.defchararray|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\defchararray.py
+numpy.core.einsumfunc|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\einsumfunc.py
+numpy.core.fromnumeric|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\fromnumeric.py
+numpy.core.function_base|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\function_base.py
+numpy.core.generate_numpy_api|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\generate_numpy_api.py
+numpy.core.getlimits|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\getlimits.py
+numpy.core.info|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\info.py
+numpy.core.machar|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\machar.py
+numpy.core.memmap|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\memmap.py
+numpy.core.multiarray|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\multiarray.py
+numpy.core.numeric|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\numeric.py
+numpy.core.numerictypes|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\numerictypes.py
+numpy.core.overrides|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\overrides.py
+numpy.core.records|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\records.py
+numpy.core.setup|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\setup.py
+numpy.core.setup_common|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\setup_common.py
+numpy.core.shape_base|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\shape_base.py
+numpy.core.tests.__init__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\__init__.py
+numpy.core.tests._locales|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\_locales.py
+numpy.core.tests.test_abc|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_abc.py
+numpy.core.tests.test_api|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_api.py
+numpy.core.tests.test_arrayprint|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_arrayprint.py
+numpy.core.tests.test_datetime|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_datetime.py
+numpy.core.tests.test_defchararray|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_defchararray.py
+numpy.core.tests.test_deprecations|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_deprecations.py
+numpy.core.tests.test_dtype|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_dtype.py
+numpy.core.tests.test_einsum|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_einsum.py
+numpy.core.tests.test_errstate|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_errstate.py
+numpy.core.tests.test_extint128|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_extint128.py
+numpy.core.tests.test_function_base|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_function_base.py
+numpy.core.tests.test_getlimits|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_getlimits.py
+numpy.core.tests.test_half|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_half.py
+numpy.core.tests.test_indexerrors|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_indexerrors.py
+numpy.core.tests.test_indexing|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_indexing.py
+numpy.core.tests.test_item_selection|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_item_selection.py
+numpy.core.tests.test_longdouble|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_longdouble.py
+numpy.core.tests.test_machar|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_machar.py
+numpy.core.tests.test_mem_overlap|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_mem_overlap.py
+numpy.core.tests.test_memmap|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_memmap.py
+numpy.core.tests.test_multiarray|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_multiarray.py
+numpy.core.tests.test_nditer|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_nditer.py
+numpy.core.tests.test_numeric|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_numeric.py
+numpy.core.tests.test_numerictypes|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_numerictypes.py
+numpy.core.tests.test_overrides|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_overrides.py
+numpy.core.tests.test_print|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_print.py
+numpy.core.tests.test_records|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_records.py
+numpy.core.tests.test_regression|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_regression.py
+numpy.core.tests.test_scalar_ctors|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_scalar_ctors.py
+numpy.core.tests.test_scalarbuffer|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_scalarbuffer.py
+numpy.core.tests.test_scalarinherit|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_scalarinherit.py
+numpy.core.tests.test_scalarmath|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_scalarmath.py
+numpy.core.tests.test_scalarprint|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_scalarprint.py
+numpy.core.tests.test_shape_base|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_shape_base.py
+numpy.core.tests.test_ufunc|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_ufunc.py
+numpy.core.tests.test_umath|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_umath.py
+numpy.core.tests.test_umath_complex|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_umath_complex.py
+numpy.core.tests.test_unicode|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\tests\test_unicode.py
+numpy.core.umath|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\umath.py
+numpy.core.umath_tests|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\core\umath_tests.py
+numpy.ctypeslib|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\ctypeslib.py
+numpy.distutils.__config__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\__config__.py
+numpy.distutils.__init__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\__init__.py
+numpy.distutils.__version__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\__version__.py
+numpy.distutils.ccompiler|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\ccompiler.py
+numpy.distutils.command.__init__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\command\__init__.py
+numpy.distutils.command.autodist|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\command\autodist.py
+numpy.distutils.command.bdist_rpm|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\command\bdist_rpm.py
+numpy.distutils.command.build|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\command\build.py
+numpy.distutils.command.build_clib|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\command\build_clib.py
+numpy.distutils.command.build_ext|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\command\build_ext.py
+numpy.distutils.command.build_py|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\command\build_py.py
+numpy.distutils.command.build_scripts|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\command\build_scripts.py
+numpy.distutils.command.build_src|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\command\build_src.py
+numpy.distutils.command.config|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\command\config.py
+numpy.distutils.command.config_compiler|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\command\config_compiler.py
+numpy.distutils.command.develop|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\command\develop.py
+numpy.distutils.command.egg_info|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\command\egg_info.py
+numpy.distutils.command.install|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\command\install.py
+numpy.distutils.command.install_clib|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\command\install_clib.py
+numpy.distutils.command.install_data|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\command\install_data.py
+numpy.distutils.command.install_headers|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\command\install_headers.py
+numpy.distutils.command.sdist|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\command\sdist.py
+numpy.distutils.compat|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\compat.py
+numpy.distutils.conv_template|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\conv_template.py
+numpy.distutils.core|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\core.py
+numpy.distutils.cpuinfo|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\cpuinfo.py
+numpy.distutils.exec_command|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\exec_command.py
+numpy.distutils.extension|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\extension.py
+numpy.distutils.fcompiler.__init__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\fcompiler\__init__.py
+numpy.distutils.fcompiler.absoft|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\fcompiler\absoft.py
+numpy.distutils.fcompiler.compaq|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\fcompiler\compaq.py
+numpy.distutils.fcompiler.environment|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\fcompiler\environment.py
+numpy.distutils.fcompiler.g95|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\fcompiler\g95.py
+numpy.distutils.fcompiler.gnu|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\fcompiler\gnu.py
+numpy.distutils.fcompiler.hpux|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\fcompiler\hpux.py
+numpy.distutils.fcompiler.ibm|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\fcompiler\ibm.py
+numpy.distutils.fcompiler.intel|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\fcompiler\intel.py
+numpy.distutils.fcompiler.lahey|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\fcompiler\lahey.py
+numpy.distutils.fcompiler.mips|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\fcompiler\mips.py
+numpy.distutils.fcompiler.nag|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\fcompiler\nag.py
+numpy.distutils.fcompiler.none|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\fcompiler\none.py
+numpy.distutils.fcompiler.pathf95|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\fcompiler\pathf95.py
+numpy.distutils.fcompiler.pg|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\fcompiler\pg.py
+numpy.distutils.fcompiler.sun|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\fcompiler\sun.py
+numpy.distutils.fcompiler.vast|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\fcompiler\vast.py
+numpy.distutils.from_template|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\from_template.py
+numpy.distutils.info|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\info.py
+numpy.distutils.intelccompiler|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\intelccompiler.py
+numpy.distutils.lib2def|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\lib2def.py
+numpy.distutils.line_endings|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\line_endings.py
+numpy.distutils.log|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\log.py
+numpy.distutils.mingw32ccompiler|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\mingw32ccompiler.py
+numpy.distutils.misc_util|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\misc_util.py
+numpy.distutils.msvc9compiler|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\msvc9compiler.py
+numpy.distutils.msvccompiler|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\msvccompiler.py
+numpy.distutils.npy_pkg_config|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\npy_pkg_config.py
+numpy.distutils.numpy_distribution|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\numpy_distribution.py
+numpy.distutils.pathccompiler|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\pathccompiler.py
+numpy.distutils.setup|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\setup.py
+numpy.distutils.system_info|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\system_info.py
+numpy.distutils.tests.__init__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\tests\__init__.py
+numpy.distutils.tests.test_exec_command|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\tests\test_exec_command.py
+numpy.distutils.tests.test_fcompiler|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\tests\test_fcompiler.py
+numpy.distutils.tests.test_fcompiler_gnu|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\tests\test_fcompiler_gnu.py
+numpy.distutils.tests.test_fcompiler_intel|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\tests\test_fcompiler_intel.py
+numpy.distutils.tests.test_fcompiler_nagfor|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\tests\test_fcompiler_nagfor.py
+numpy.distutils.tests.test_from_template|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\tests\test_from_template.py
+numpy.distutils.tests.test_misc_util|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\tests\test_misc_util.py
+numpy.distutils.tests.test_npy_pkg_config|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\tests\test_npy_pkg_config.py
+numpy.distutils.tests.test_system_info|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\tests\test_system_info.py
+numpy.distutils.unixccompiler|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\distutils\unixccompiler.py
+numpy.doc.__init__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\doc\__init__.py
+numpy.doc.basics|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\doc\basics.py
+numpy.doc.broadcasting|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\doc\broadcasting.py
+numpy.doc.byteswapping|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\doc\byteswapping.py
+numpy.doc.constants|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\doc\constants.py
+numpy.doc.creation|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\doc\creation.py
+numpy.doc.glossary|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\doc\glossary.py
+numpy.doc.indexing|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\doc\indexing.py
+numpy.doc.internals|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\doc\internals.py
+numpy.doc.misc|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\doc\misc.py
+numpy.doc.structured_arrays|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\doc\structured_arrays.py
+numpy.doc.subclassing|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\doc\subclassing.py
+numpy.doc.ufuncs|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\doc\ufuncs.py
+numpy.dual|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\dual.py
+numpy.f2py.__init__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\__init__.py
+numpy.f2py.__main__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\__main__.py
+numpy.f2py.__version__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\__version__.py
+numpy.f2py.auxfuncs|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\auxfuncs.py
+numpy.f2py.capi_maps|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\capi_maps.py
+numpy.f2py.cb_rules|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\cb_rules.py
+numpy.f2py.cfuncs|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\cfuncs.py
+numpy.f2py.common_rules|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\common_rules.py
+numpy.f2py.crackfortran|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\crackfortran.py
+numpy.f2py.diagnose|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\diagnose.py
+numpy.f2py.f2py2e|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\f2py2e.py
+numpy.f2py.f2py_testing|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\f2py_testing.py
+numpy.f2py.f90mod_rules|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\f90mod_rules.py
+numpy.f2py.func2subr|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\func2subr.py
+numpy.f2py.info|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\info.py
+numpy.f2py.rules|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\rules.py
+numpy.f2py.setup|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\setup.py
+numpy.f2py.tests.__init__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\tests\__init__.py
+numpy.f2py.tests.test_array_from_pyobj|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\tests\test_array_from_pyobj.py
+numpy.f2py.tests.test_assumed_shape|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\tests\test_assumed_shape.py
+numpy.f2py.tests.test_block_docstring|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\tests\test_block_docstring.py
+numpy.f2py.tests.test_callback|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\tests\test_callback.py
+numpy.f2py.tests.test_common|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\tests\test_common.py
+numpy.f2py.tests.test_compile_function|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\tests\test_compile_function.py
+numpy.f2py.tests.test_kind|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\tests\test_kind.py
+numpy.f2py.tests.test_mixed|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\tests\test_mixed.py
+numpy.f2py.tests.test_parameter|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\tests\test_parameter.py
+numpy.f2py.tests.test_quoted_character|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\tests\test_quoted_character.py
+numpy.f2py.tests.test_regression|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\tests\test_regression.py
+numpy.f2py.tests.test_return_character|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\tests\test_return_character.py
+numpy.f2py.tests.test_return_complex|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\tests\test_return_complex.py
+numpy.f2py.tests.test_return_integer|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\tests\test_return_integer.py
+numpy.f2py.tests.test_return_logical|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\tests\test_return_logical.py
+numpy.f2py.tests.test_return_real|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\tests\test_return_real.py
+numpy.f2py.tests.test_semicolon_split|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\tests\test_semicolon_split.py
+numpy.f2py.tests.test_size|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\tests\test_size.py
+numpy.f2py.tests.test_string|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\tests\test_string.py
+numpy.f2py.tests.util|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\tests\util.py
+numpy.f2py.use_rules|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\f2py\use_rules.py
+numpy.fft.__init__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\fft\__init__.py
+numpy.fft.fftpack|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\fft\fftpack.py
+numpy.fft.fftpack_lite|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\fft\fftpack_lite.cp37-win_amd64.pyd
+numpy.fft.helper|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\fft\helper.py
+numpy.fft.info|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\fft\info.py
+numpy.fft.setup|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\fft\setup.py
+numpy.fft.tests.__init__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\fft\tests\__init__.py
+numpy.fft.tests.test_fftpack|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\fft\tests\test_fftpack.py
+numpy.fft.tests.test_helper|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\fft\tests\test_helper.py
+numpy.lib.__init__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\__init__.py
+numpy.lib._datasource|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\_datasource.py
+numpy.lib._iotools|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\_iotools.py
+numpy.lib._version|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\_version.py
+numpy.lib.arraypad|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\arraypad.py
+numpy.lib.arraysetops|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\arraysetops.py
+numpy.lib.arrayterator|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\arrayterator.py
+numpy.lib.financial|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\financial.py
+numpy.lib.format|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\format.py
+numpy.lib.function_base|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\function_base.py
+numpy.lib.histograms|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\histograms.py
+numpy.lib.index_tricks|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\index_tricks.py
+numpy.lib.info|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\info.py
+numpy.lib.mixins|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\mixins.py
+numpy.lib.nanfunctions|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\nanfunctions.py
+numpy.lib.npyio|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\npyio.py
+numpy.lib.polynomial|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\polynomial.py
+numpy.lib.recfunctions|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\recfunctions.py
+numpy.lib.scimath|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\scimath.py
+numpy.lib.setup|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\setup.py
+numpy.lib.shape_base|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\shape_base.py
+numpy.lib.stride_tricks|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\stride_tricks.py
+numpy.lib.tests.__init__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\tests\__init__.py
+numpy.lib.tests.test__datasource|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\tests\test__datasource.py
+numpy.lib.tests.test__iotools|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\tests\test__iotools.py
+numpy.lib.tests.test__version|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\tests\test__version.py
+numpy.lib.tests.test_arraypad|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\tests\test_arraypad.py
+numpy.lib.tests.test_arraysetops|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\tests\test_arraysetops.py
+numpy.lib.tests.test_arrayterator|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\tests\test_arrayterator.py
+numpy.lib.tests.test_financial|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\tests\test_financial.py
+numpy.lib.tests.test_format|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\tests\test_format.py
+numpy.lib.tests.test_function_base|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\tests\test_function_base.py
+numpy.lib.tests.test_histograms|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\tests\test_histograms.py
+numpy.lib.tests.test_index_tricks|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\tests\test_index_tricks.py
+numpy.lib.tests.test_io|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\tests\test_io.py
+numpy.lib.tests.test_mixins|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\tests\test_mixins.py
+numpy.lib.tests.test_nanfunctions|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\tests\test_nanfunctions.py
+numpy.lib.tests.test_packbits|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\tests\test_packbits.py
+numpy.lib.tests.test_polynomial|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\tests\test_polynomial.py
+numpy.lib.tests.test_recfunctions|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\tests\test_recfunctions.py
+numpy.lib.tests.test_regression|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\tests\test_regression.py
+numpy.lib.tests.test_shape_base|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\tests\test_shape_base.py
+numpy.lib.tests.test_stride_tricks|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\tests\test_stride_tricks.py
+numpy.lib.tests.test_twodim_base|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\tests\test_twodim_base.py
+numpy.lib.tests.test_type_check|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\tests\test_type_check.py
+numpy.lib.tests.test_ufunclike|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\tests\test_ufunclike.py
+numpy.lib.tests.test_utils|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\tests\test_utils.py
+numpy.lib.twodim_base|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\twodim_base.py
+numpy.lib.type_check|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\type_check.py
+numpy.lib.ufunclike|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\ufunclike.py
+numpy.lib.user_array|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\user_array.py
+numpy.lib.utils|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\lib\utils.py
+numpy.linalg.__init__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\linalg\__init__.py
+numpy.linalg._umath_linalg|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\linalg\_umath_linalg.cp37-win_amd64.pyd
+numpy.linalg.info|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\linalg\info.py
+numpy.linalg.lapack_lite|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\linalg\lapack_lite.cp37-win_amd64.pyd
+numpy.linalg.linalg|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\linalg\linalg.py
+numpy.linalg.setup|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\linalg\setup.py
+numpy.linalg.tests.__init__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\linalg\tests\__init__.py
+numpy.linalg.tests.test_build|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\linalg\tests\test_build.py
+numpy.linalg.tests.test_deprecations|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\linalg\tests\test_deprecations.py
+numpy.linalg.tests.test_linalg|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\linalg\tests\test_linalg.py
+numpy.linalg.tests.test_regression|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\linalg\tests\test_regression.py
+numpy.ma.__init__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\ma\__init__.py
+numpy.ma.bench|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\ma\bench.py
+numpy.ma.core|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\ma\core.py
+numpy.ma.extras|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\ma\extras.py
+numpy.ma.mrecords|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\ma\mrecords.py
+numpy.ma.setup|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\ma\setup.py
+numpy.ma.tests.__init__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\ma\tests\__init__.py
+numpy.ma.tests.test_core|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\ma\tests\test_core.py
+numpy.ma.tests.test_deprecations|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\ma\tests\test_deprecations.py
+numpy.ma.tests.test_extras|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\ma\tests\test_extras.py
+numpy.ma.tests.test_mrecords|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\ma\tests\test_mrecords.py
+numpy.ma.tests.test_old_ma|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\ma\tests\test_old_ma.py
+numpy.ma.tests.test_regression|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\ma\tests\test_regression.py
+numpy.ma.tests.test_subclassing|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\ma\tests\test_subclassing.py
+numpy.ma.testutils|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\ma\testutils.py
+numpy.ma.timer_comparison|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\ma\timer_comparison.py
+numpy.ma.version|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\ma\version.py
+numpy.matlib|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\matlib.py
+numpy.matrixlib.__init__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\matrixlib\__init__.py
+numpy.matrixlib.defmatrix|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\matrixlib\defmatrix.py
+numpy.matrixlib.setup|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\matrixlib\setup.py
+numpy.matrixlib.tests.__init__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\matrixlib\tests\__init__.py
+numpy.matrixlib.tests.test_defmatrix|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\matrixlib\tests\test_defmatrix.py
+numpy.matrixlib.tests.test_interaction|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\matrixlib\tests\test_interaction.py
+numpy.matrixlib.tests.test_masked_matrix|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\matrixlib\tests\test_masked_matrix.py
+numpy.matrixlib.tests.test_matrix_linalg|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\matrixlib\tests\test_matrix_linalg.py
+numpy.matrixlib.tests.test_multiarray|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\matrixlib\tests\test_multiarray.py
+numpy.matrixlib.tests.test_numeric|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\matrixlib\tests\test_numeric.py
+numpy.matrixlib.tests.test_regression|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\matrixlib\tests\test_regression.py
+numpy.polynomial.__init__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\polynomial\__init__.py
+numpy.polynomial._polybase|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\polynomial\_polybase.py
+numpy.polynomial.chebyshev|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\polynomial\chebyshev.py
+numpy.polynomial.hermite|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\polynomial\hermite.py
+numpy.polynomial.hermite_e|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\polynomial\hermite_e.py
+numpy.polynomial.laguerre|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\polynomial\laguerre.py
+numpy.polynomial.legendre|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\polynomial\legendre.py
+numpy.polynomial.polynomial|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\polynomial\polynomial.py
+numpy.polynomial.polyutils|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\polynomial\polyutils.py
+numpy.polynomial.setup|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\polynomial\setup.py
+numpy.polynomial.tests.__init__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\polynomial\tests\__init__.py
+numpy.polynomial.tests.test_chebyshev|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\polynomial\tests\test_chebyshev.py
+numpy.polynomial.tests.test_classes|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\polynomial\tests\test_classes.py
+numpy.polynomial.tests.test_hermite|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\polynomial\tests\test_hermite.py
+numpy.polynomial.tests.test_hermite_e|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\polynomial\tests\test_hermite_e.py
+numpy.polynomial.tests.test_laguerre|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\polynomial\tests\test_laguerre.py
+numpy.polynomial.tests.test_legendre|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\polynomial\tests\test_legendre.py
+numpy.polynomial.tests.test_polynomial|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\polynomial\tests\test_polynomial.py
+numpy.polynomial.tests.test_polyutils|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\polynomial\tests\test_polyutils.py
+numpy.polynomial.tests.test_printing|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\polynomial\tests\test_printing.py
+numpy.random.__init__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\random\__init__.py
+numpy.random.info|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\random\info.py
+numpy.random.mtrand|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\random\mtrand.cp37-win_amd64.pyd
+numpy.random.setup|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\random\setup.py
+numpy.random.tests.__init__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\random\tests\__init__.py
+numpy.random.tests.test_random|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\random\tests\test_random.py
+numpy.random.tests.test_regression|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\random\tests\test_regression.py
+numpy.setup|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\setup.py
+numpy.testing.__init__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\testing\__init__.py
+numpy.testing._private.__init__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\testing\_private\__init__.py
+numpy.testing._private.decorators|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\testing\_private\decorators.py
+numpy.testing._private.noseclasses|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\testing\_private\noseclasses.py
+numpy.testing._private.nosetester|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\testing\_private\nosetester.py
+numpy.testing._private.parameterized|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\testing\_private\parameterized.py
+numpy.testing._private.utils|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\testing\_private\utils.py
+numpy.testing.decorators|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\testing\decorators.py
+numpy.testing.noseclasses|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\testing\noseclasses.py
+numpy.testing.nosetester|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\testing\nosetester.py
+numpy.testing.print_coercion_tables|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\testing\print_coercion_tables.py
+numpy.testing.setup|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\testing\setup.py
+numpy.testing.tests.__init__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\testing\tests\__init__.py
+numpy.testing.tests.test_decorators|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\testing\tests\test_decorators.py
+numpy.testing.tests.test_doctesting|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\testing\tests\test_doctesting.py
+numpy.testing.tests.test_utils|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\testing\tests\test_utils.py
+numpy.testing.utils|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\testing\utils.py
+numpy.tests.__init__|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\tests\__init__.py
+numpy.tests.test_ctypeslib|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\tests\test_ctypeslib.py
+numpy.tests.test_matlib|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\tests\test_matlib.py
+numpy.tests.test_numpy_version|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\tests\test_numpy_version.py
+numpy.tests.test_public_api|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\tests\test_public_api.py
+numpy.tests.test_reloading|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\tests\test_reloading.py
+numpy.tests.test_scripts|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\tests\test_scripts.py
+numpy.tests.test_warnings|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\tests\test_warnings.py
+numpy.version|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\lib\site-packages\numpy\version.py
+operator
+os
+os.path
+parser
+pytest
+python37|C:\Users\Karan Sarkar\AppData\Local\Programs\Python\Python37\python37.dll
+scipy
+signal
+six
+socket
+ssl
+strop
+sys
+thread
+time
+winreg
+wx
+wxPython
+xxsubtype
+zipimport
+zlib

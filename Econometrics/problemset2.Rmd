@@ -1,0 +1,175 @@
+6.1 
+  a)  Best subset selection has the smallest training RSS because it considers all possible subsets and chooses the one with the 
+      least amount of RSS. It is impossible that a stepwise method provides a smaller RSS though it may equal.
+  b)  Best subset selection may have the smallest test RSS because it considers more models. However, one of the stepwise methods 
+      may fit the data better because of overfitting by best subset selection.
+  c)
+      i)  True:   Forward stepsize with (k+1) variables simply adds a variable to the k variable case.
+      ii) True:   Backward stepsize with k variables simply removes a variable from the (k+1) variable case
+      iii)False:  The variables used in backward and forward stepsize are not required to be related.
+      iv) False:  The variables used in backward and forward stepsize are not required to be related
+      v)  False:  Best subset does not add variables incrementally.
+
+6.2
+  a)  The lasso method is less flexible and hence will give improved prediction accu-racy when its increase in bias is less than 
+      its decrease in variance.
+  b)  The ridge regression method is less flexible and hence will give improved prediction accu-racy when its increase in bias is 
+      less than its decrease in variance.
+  c)  Nonlinear methods are more flexible and hence will give improved prediction accu-racy when its increase in variance is less 
+      than its decrease in bias.
+
+7.3
+```{r}
+x = -50:50 / 25
+y = 1 + x + -2 * (x-1)^2 * I(x>1)
+plot(1, type="n", xlab="", ylab="", xlim=c(-2, 2), ylim=c(-1.5, 2.5))
+lines(x, y)
+```
+Y-intercept is 1. Slope is 1  within the range x= -2 to x= 1.
+
+
+7.9
+```{r}
+library(MASS)
+attach(Boston)
+```
+  
+  a)
+```{r}
+lm.fit = lm(nox ~ poly(dis, 3), data = Boston)
+summary(lm.fit)
+range = range(dis)
+xvals = seq(from = range[1], to = range[2], by = 0.1)
+yvals = predict(lm.fit, list(dis = xvals))
+plot(nox ~ dis, data = Boston)
+lines(xvals, yvals)
+```
+
+  b)
+```{r}
+rss = numeric(10)
+for (i in 1:10) {
+    lm.fit = lm(nox ~ poly(dis, i), data = Boston)
+    rss[i] = sum(lm.fit$residuals^2)
+}
+rss
+```
+  
+  c) We will use 5-fold cross validation.
+```{r}
+library(boot)
+error = numeric(10)
+for (i in 1:10) {
+    glm.fit = glm(nox ~ poly(dis, i), data = Boston)
+    error[i] = cv.glm(Boston, glm.fit, K = 10)$delta[2]
+}
+plot(1:10, error, xlab = "Degree", ylab = "Error", type = "l")
+```
+  The cross validation shows us that the cross validated error decreases for 1 to 3, stays constant for 3 to 5 and then starts 
+  increasing. We will choose a degree of 3.
+  
+  d)
+```{r}
+library(splines)
+spl.fit = lm(nox ~ bs(dis, df = 4, knots = c(4, 7, 11)), data = Boston)
+summary(spl.fit)
+yvals = predict(spl.fit, list(dis = xvals))
+plot(nox ~ dis, data = Boston)
+lines(xvals, yvals)
+```
+  The summary shows that all the spline terms are significant. The splines fit well except at the upper extreme.
+  
+  
+  e)
+```{r}
+error = numeric(20)
+for (i in 3:20) {
+    lm.fit = lm(nox ~ bs(dis, df = i), data = Boston)
+    error[i] = sum(lm.fit$residuals^2)
+}
+error
+```
+  Training RSS decreases until 14 degrees of freedom.
+  
+  f) We will use 5-fold cross validation.
+```{r}
+error = numeric(20)
+for (i in 3:20) {
+    lm.fit = glm(nox ~ bs(dis, df = i), data = Boston)
+    error[i] = cv.glm(Boston, lm.fit, K = 5)$delta[2]
+}
+plot(3:20, error[-c(1,2)], type = "l")
+```
+  The cross validated error decreases until 10 degrees of freedom.
+  
+8.5
+```{r}
+x = c(0.1, 0.15, 0.2, 0.2, 0.55, 0.6, 0.6, 0.65, 0.7, 0.75)
+# Majority Method
+sum(x >= 0.5) > sum(x < 0.5)
+# Averaging Method
+mean(x)
+```
+For the majority method, the number of red predictions is greater than the number of green predictions, giving red as the result. For the averaging method, the average probability is 0.45, giving a green result.
+
+8.8
+  a)
+```{r}
+library(ISLR)
+attach(Carseats)
+
+samp = sample(dim(Carseats)[1], dim(Carseats)[1]/2)
+train = Carseats[samp, ]
+test = Carseats[-samp, ]
+```
+  
+  b)
+```{r}
+library(tree)
+tree = tree(Sales ~ ., data = train)
+summary(tree)
+plot(tree)
+text(tree)
+preds = predict(tree, test)
+mean((test$Sales - preds)^2)
+```
+  The RSS is 5.57.
+  
+  c)
+```{r}
+error = cv.tree(tree, FUN = prune.tree)
+plot(error$size, error$dev, type = "b")
+plot(error$k, error$dev, type = "b")
+```
+```{r}
+# We will use size of 7.
+pruned = prune.tree(tree, best = 7)
+plot(pruned)
+text(pruned)
+pruned_preds = predict(pruned, test)
+mean((test$Sales - pruned_preds)^2)
+```
+  Pruning the tree increases the RSS to 5.807
+  
+  d)
+```{r}
+library(randomForest)
+bag = randomForest(Sales ~ ., data = train, mtry = 10, ntree = 500, importance = T)
+bag_preds = predict(bag, test)
+mean((test$Sales - bag_preds)^2)
+importance(bag)
+```
+  
+  Bagging improves test MSE up to 3.41. Price, ShelveLoc and Advertising are three most important predictors of Sale.
+  
+  e)
+```{r}
+rf = randomForest(Sales ~ ., data = train, mtry = 5, ntree = 500, 
+    importance = T)
+rf_preds = predict(rf, test)
+mean((test$Sales - rf_preds)^2)
+importance(rf)
+```
+  Random forest increases the test MSE to 3.56. Changes in m vary test MSE between 3 to 4. We again see that Price, ShelveLoc 
+  and Advertising are the best predictors.
+  

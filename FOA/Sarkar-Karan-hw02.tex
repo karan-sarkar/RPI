@@ -1,0 +1,50 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath, amsthm}
+\usepackage[shortlabels]{enumitem}
+\newtheorem{problem}{Problem}
+
+\title{Homework 2}
+\author{Karan Sarkar \\ sarkak2@rpi.edu}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+Let $J$ be a non-empty index set and let $\{A_j:j \in J\}$ be an indexed family of sets and suppose $B$ is a set. 
+Prove that $$B \setminus \Big[ \bigcap_{j \in J} A_j \Big]= \bigcup_{j \in J} \left(B \setminus A_j\right)$$  
+\end{problem}
+
+\begin{proof}
+In order to prove that $B \setminus [ \cap_{j \in J} A_j ]= \cup_{j \in J} \left(B \setminus A_j\right)$, we must show that:
+\begin{enumerate}[(i)]
+    \item $B \setminus \Big[ \bigcap_{j \in J} A_j \Big] \subseteq \bigcup_{j \in J} \left(B \setminus A_j\right)$  
+    \item $\bigcup_{j \in J} \left(B \setminus A_j\right) \subseteq B \setminus \Big[ \bigcap_{j \in J} A_j \Big]$
+\end{enumerate}
+We will begin with (i). Assume that $B \setminus [ \cap_{j \in J} A_j ]$ is nonempty because otherwise (i) is vacuously true. Therefore, let $x \in B \setminus [ \cap_{j \in J} A_j ]$. From the complement, we have that $x \in B$ and $x \not \in [ \cap_{j \in J} A_j ]$. Consequently, there must exist a $j_0 \in J$ such that $x \not \in A_{j_0}$. Because $x \in B$ and $x \not \in A_{j_0}$, we have that $x \in B \setminus A_{j_0}$. In other words, there exists a $j \in J$ such that $x \in B \setminus A_j$. Therefore, it follows that $x \in \cup_{j \in J} \left(B \setminus A_j\right)$. It now follows that $B \setminus [ \cap_{j \in J} A_j ] \subseteq \cup_{j \in J} \left(B \setminus A_j\right)$.
+
+We will now handle (ii). Assume that $\cup_{j \in J} \left(B \setminus A_j\right)$ is nonempty because otherwise (ii) is vacuously true. Therefore let $x \in \cup_{j \in J} \left(B \setminus A_j\right)$. Therefore, there exists a $j_0 \in J$ such that $x \in B \setminus A_{j_0}$. As a result, there exists a $j_0 \in J$ such that $x \in B$ and $x \not \in A_{j_0}$. Thus, $x \in B$. Moreover, it is not true that for all $j \in J$, we have that $x \in A_j$. Therefore, $x \not \in \cap_{j \in J} A_j$. From the definition of set complement, we now have that $x \in B \setminus [\cap_{j \in J} A_j]$. It now follows that $\cup_{j \in J} \left(B \setminus A_j\right) \subseteq  B \setminus [\cap_{j \in J} A_j]$. Because we have proven (i) and (ii), it follows that  $B \setminus [ \cap_{j \in J} A_j ]= \cup_{j \in J} \left(B \setminus A_j\right)$.
+
+\end{proof}
+
+\pagebreak
+
+\begin{problem}
+ Prove or give a counterexample: 
+$$A \times \left(B \cap C \right) = \left(A \times B \right) \cap \left( A \times C \right)$$
+\end{problem}
+\begin{proof}
+In order to prove that $A \times \left(B \cap C \right) = \left(A \times B \right) \cap \left( A \times C \right)$, we must show that:
+\begin{enumerate}[(i)]
+    \item  $ A \times \left(B \cap C \right) \subseteq \left(A \times B \right) \cap \left( A \times C \right)$ 
+    \item $\left(A \times B \right) \cap \left( A \times C \right) \subseteq A \times \left(B \cap C \right)$
+\end{enumerate}
+We will begin with (i). Assume that $A \times \left(B \cap C \right)$ is nonempty because otherwise (i) is vacuously true. Therefore, let the ordered pair $(x,y) \in A \times \left(B \cap C \right)$. From the definition of Cartesian product, we have that $x \in A$ and $y \in B \cap C$. From the definition of intersection, we know that $y \in B$ and $y \in C$. Because $x \in A$ and $y \in B$, it follows that $(x, y) \in A \times B$. Similarly, because $x \in A$ and $y \in C$, we have that $(x, y) \in A \times C$. As both $x \in A \times B$ and $x \in A \times C$, combining both, we have $x \in \left(A \times B \right) \cap \left( A \times C \right)$. Therefore, $ A \times \left(B \cap C \right) \subseteq \left(A \times B \right) \cap \left( A \times C \right)$.
+
+We will now handle (ii). Assume that $\left(A \times B \right) \cap \left( A \times C \right)$ is nonempty because otherwise (ii) is vacuously true. Therefore, let the ordered pair $(x,y) \in \left(A \times B \right) \cap \left( A \times C \right)$. From the intersection, we have that $(x, y) \in A \times B$ and $(x, y) \in A \times C$. From the former, we get that $x \in A$ and $y \in B$. From the latter, we get that $x \in A$ and $y \in C$. Because $y \in B$ and $y \in C$, we know that $y \in B \cap C$. As $x \in A$ and $y \in B \cap C$, it follows that $x \in A \times \left(B \cap C \right)$. Thus, we have that $\left(A \times B \right) \cap \left( A \times C \right) \subseteq A \times \left(B \cap C \right)$. Because we have proven (i) and (ii), it now follows that $A \times \left(B \cap C \right) = \left(A \times B \right) \cap \left( A \times C \right)$.
+\end{proof}
+
+\end{document}

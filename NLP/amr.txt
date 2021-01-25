@@ -1,0 +1,42 @@
+(o / or
+      :op1 (t / try-01
+            :ARG0 (t2 / they)
+            :ARG1 (p / prop-01
+                  :ARG0 t2
+                  :ARG1 (p2 / person :wiki "Mitt_Romney" :name (n / name :op1 "Romney"))
+                  :ARG2 (p3 / person
+                        :ARG0-of (h / have-org-role-91
+                              :ARG2 (p4 / president
+                                    :mod (v / vice)
+                                    :mod (s / strong))))
+                  :purpose (h2 / help-01
+                        :ARG0 p3
+                        :ARG1 (m / make-01
+                              :ARG1 (p5 / palatable
+                                    :degree (m2 / more))
+                              :ARG2 p2))))
+      :op2 (b / bring-01
+            :ARG0 t2
+            :ARG1 (f / face
+                  :mod (n2 / new))))
+(a / and
+      :op1 (t / think-01 :polarity -
+            :ARG0 (i / i)
+            :ARG1 (t2 / tank-01
+                  :ARG0 (p / person :wiki "Gary_Johnson"
+                        :name (n / name :op1 "Johnson"))))
+      :op2 (o / one
+            :mod (c / close
+                  :time (t3 / till
+                        :op1 (e / end
+                              :degree (v / very))))
+            :domain (i2 / it))
+      :op3 (r / root-03
+            :ARG0 i
+            :ARG1 (t4 / ticket
+                  :mod (s2 / slash
+                        :op1 (p2 / person :wiki "Mitt_Romney"
+                              :name (n2 / name :op1 "Romney"))
+                        :op2 (p3 / person :wiki "Bob_McDonnell"
+                              :name (n3 / name :op1 "McDonnell"))))
+            :time (s / still)))

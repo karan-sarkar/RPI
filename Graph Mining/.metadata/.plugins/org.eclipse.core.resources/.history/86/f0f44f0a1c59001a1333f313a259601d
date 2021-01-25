@@ -1,0 +1,197 @@
+import networkx as nx
+import numpy as np
+import tqdm
+import math
+import random
+
+'''
+infect_edges = []
+with open('infect') as file:
+    for line in file:
+        tokens = line.split()
+        infect_edges.append((int(tokens[0]), int(tokens[1]), '+', int(tokens[3])))
+        infect_edges.append((int(tokens[0]), int(tokens[1]), '-', int(tokens[3]) + int(tokens[2])))
+        
+infect_edges = sorted(infect_edges,key=lambda x: x[3])
+
+# 0 = No Status, 1 = Immune, 2 = Infected, 3 = Dead
+def infect_sim(status):
+    contact = [0 for _ in range(410)]
+    time = infect_edges[0][3]
+    infect_graph = nx.MultiGraph()
+    for edge in infect_edges:
+        while time < edge[3]:
+            for node in infect_graph.nodes:
+                has_contact = False
+                for neighbor in infect_graph.neighbors(node):
+                    if status[neighbor - 1] == 2:
+                        has_contact = True
+                if has_contact:
+                    contact[node - 1] += 0.1
+                else:
+                    contact[node - 1] = 0
+                    
+                if status[node - 1] == 0:
+                    if random.random() < contact[node - 1]:
+                        status[node - 1] = 2
+                if status[node - 1] == 2:
+                    if random.random() < 0.05:
+                        status[node - 1] = 3
+            time += 1
+        for i in range(0, 2):
+            if edge[i] not in infect_graph.nodes:
+                infect_graph.add_node(edge[i])
+        if edge[2] == '+':
+            infect_graph.add_edge(edge[0], edge[1])
+        else:
+            infect_graph.remove_edge(edge[0], edge[1])
+    
+    return np.sum(status == 3)
+
+infect_graph_central = nx.Graph()
+for edge in infect_edges:
+    for i in range(0, 2):
+        if edge[i] not in infect_graph_central.nodes:
+            infect_graph_central.add_node(edge[i])
+    infect_graph_central.add_edge(edge[0], edge[1])
+    
+bw = nx.betweenness_centrality(infect_graph_central)
+cl = nx.closeness_centrality(infect_graph_central)
+bw_array = np.zeros((410))
+cl_array = np.zeros((410))
+for i in range(410):
+    bw_array[i] = bw[i + 1]
+    cl_array[i] = cl[i + 1]
+
+
+
+status1 = np.zeros((410))
+status1[0:100] = 1
+status1[100:200] = 2
+np.random.shuffle(status1)
+print('Infect Sim 1: ', infect_sim(status1))
+
+    
+status2 = np.zeros((410))
+status2[np.argpartition(bw_array, -100)[-100:]] = 1
+for _ in range(100):
+    i = random.randint(0, 409)
+    while status2[i] == 1:
+        i = random.randint(0, 409)
+    status2[i] = 2
+print('Infect Sim 2: ', infect_sim(status2))
+
+status3 = np.zeros((410))
+status3[np.argpartition(cl_array, -100)[-100:]] = 2
+status3[np.argpartition(bw_array, -100)[-100:]] = 1
+print('Infect Sim 3: ', infect_sim(status3))
+
+status4 = np.zeros((410))
+status4[np.argpartition(cl_array, -100)[-100:]] = 2
+for _ in range(100):
+    i = random.randint(0, 409)
+    while status4[i] == 2:
+        i = random.randint(0, 409)
+    status4[i] = 1
+print('Infect Sim 4: ', infect_sim(status4))
+'''
+
+amazon_edges = []
+with open('amazon') as file:
+    for line in file:
+        tokens = line.split()
+        amazon_edges.append((tokens[0], tokens[1], float(tokens[2]), int(tokens[3])))
+        
+amazon_edges = sorted(amazon_edges,key=lambda x: x[3])
+
+amazon_graph_partial = nx.Graph()
+for i in range(int(len(amazon_edges)/10)):
+    edge = amazon_edges[i]
+    for i in range(0, 2):
+        if edge[i] not in amazon_graph_partial.nodes:
+            amazon_graph_partial.add_node(edge[i])
+    amazon_graph_partial.add_edge(edge[0], edge[1], weight = edge[2])
+
+amazon_graph_full = nx.Graph()
+for edge in amazon_edges:
+    for i in range(0, 2):
+        if edge[i] not in amazon_graph_full.nodes:
+            amazon_graph_full.add_node(edge[i])
+    amazon_graph_full.add_edge(edge[0], edge[1])
+    
+amazon_friends = nx.Graph()
+for node in tqdm.tqdm(amazon_graph_partial.nodes):
+    if node[0] == 'A':
+        if node not in amazon_friends.nodes:
+            amazon_friends.add_node(node)
+        for neighbor in amazon_graph_partial.nodes:
+            if neighbor[0] == 'A':
+                if neighbor not in amazon_friends.nodes:
+                    amazon_friends.add_node(neighbor)
+                jaccard = nx.jaccard_coefficient(amazon_graph_partial, [(node, neighbor)])
+                for u, v, p in jaccard:
+                    if p > 0.5:
+                        amazon_friends.add_edge(node, neighbor, weight = 5 * p)
+
+c_total = 0
+c_matches = 0
+
+a_total = 0
+a_matches = 0
+
+p_total = 0
+p_matches = 0
+                    
+for node in amazon_friends.nodes:
+    c_preds = []
+    a_preds = []
+    p_preds = []
+    for neighbor in amazon_friends.neighbors(node):
+        c = nx.common_neighbors(amazon_graph_partial, node, neighbor)
+        c_count = 0
+        for _ in c:
+            c_count += 1
+            
+        adar = nx.adamic_adar_index(amazon_graph_partial, [(node, neighbor)])
+        try :
+            for _, _, p in adar:
+                for rec in amazon_graph_partial.neighbors(neighbor):
+                    if rec not in amazon_graph_partial.neighbors(node):
+                        a_preds.append((rec, p))
+        except:
+            pass
+        
+        
+        for rec in amazon_graph_partial.neighbors(neighbor):
+            if rec not in amazon_graph_partial.neighbors(node):
+                c_preds.append((rec, c_count))
+                p_preds.append((rec, nx.degree(amazon_graph_partial, node) * nx.degree(amazon_graph_partial, neighbor)))
+    c_preds = sorted(c_preds,key=lambda x: -1 * x[1])
+    c_preds = c_preds[0: int(len(c_preds) / 4) + 1]
+    c_total += len(c_preds)
+    for c_pred in c_preds:
+        if c_pred in amazon_graph_full.neighbors(node):
+            c_total += 1
+            
+    a_preds = sorted(a_preds,key=lambda x: -1 * x[1])
+    a_preds = c_preds[0: int(len(a_preds) / 4) + 1]
+    a_total += len(a_preds)
+    for a_pred in a_preds:
+        if a_pred in amazon_graph_full.neighbors(node):
+            a_total += 1
+            
+    p_preds = sorted(p_preds,key=lambda x: -1 * x[1])
+    p_preds = p_preds[0: int(len(a_preds) / 4) + 1]
+    p_total += len(p_preds)
+    for p_pred in p_preds:
+        if p_pred in amazon_graph_full.neighbors(node):
+            a_total += 1
+
+print(c_matches/c_total)
+print(a_matches/a_total)
+    
+
+
+
+
+

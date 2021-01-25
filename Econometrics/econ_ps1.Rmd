@@ -1,0 +1,180 @@
+---
+title: "ECON 4966 Problem Set 1"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Problem Set 1
+Karan Sarkar
+
+2.5
+Flexible models have both advantages and disadvantages. The advantage of a flexible model is the decreased bias. This means that flexible models can fit to many different complicated nonlinear distributions. However, flexible models are less easily interpretable than rigid models. In particular, understanding how a single predictor influences the response becomes quite difficult. Moreover, flexible models can overfit the distribution by memorizing the random noise in the inputted data.  Flexible models are preferred when interpretability is not very important and there is a lot of data for validation to alleviate overfitting. Flexible models might not be useful if the goal is simply to extract the effect of each predictor or if the distribution is believed to be described well by more restrictive linear models.
+
+2.6
+Parametric models express the distribution in terms of a function of a number of parameters. The specific form of the function is chosen by the researcher. Non-parametric models do not try to fit the data to a predefined function, instead they try to learn the function that describes the distribution. Parametric models have a number of advantages in that they are more easily interpretable and require less data. On the other hand, parametric models are only as effective as the function chosen beforehand to describe the distribution. If the function chosen does not reflect the data, the model will not be useful. This is in contrast with non-parametric models which are capable of learning the distribution themselves. Moreover, non-parametric models can fit a wider variety of complex distributions that may not be easily written in a functional form.
+
+3.4
+
+(a) We would expect the training RSS to be smaller for the cubic regression. Because the linear regression's parameters are just a strict subset of the cubic regression's parameters, the cubic regression model is more flexible. Because the cubic regression is more flexible, it will be able to reduce its training RSS by memorizing random fluctuations in the training data that the linear regression cannot even though the distribution is actually linear.
+
+(b) We would expect the testing RSS to be larger for the cubic regression. As stated in (a), the cubic regression would memorize random variations in the training data to acheive a lower training RSS. However, these same variations will not exist in the testing data. Because the linear regression matches the true linear distribution while the cubic regression is fitting to some random variation, the linear regression will have the lower testing RSS.
+
+(c) For the same reasons outlined in (a), the cubic regression would have the smaller training RSS.
+
+(d) Without knowing the exact distribution of the data, it is impossible to say whether the cubic or linear regression will have the lower testing RSS. This is because we do not know whether the true distribution is closer to cubic or linear.
+
+3.9
+
+(a)
+```{r}
+library(ISLR)
+data("Auto")
+pairs(Auto)
+```
+
+(b)
+```{r}
+cor(Auto[,-ncol(Auto)])
+```
+
+(c)
+```{r}
+linear.model <- lm(mpg~.,Auto[,-ncol(Auto)])
+summary(linear.model)
+```
+
+i. Because of the p-value associated with F-statistic is 2.2e-16 (very small), it is very unlikely that the success of the model is due to pure chance. Therefore, there must be a relationship between the predictors and the response.
+
+
+ii. The predictors displacement, weight, year and origin seem to have a statistically significant effect on the response mpg. This is because each of their p-values is less than 0.05.
+
+iii. The coefficient for year suggests that the linear model predicts that on average a car made 1 year after another will have 0.75 additional mpg with all other factors held equal.
+
+(d) 
+```{r}
+plot(linear.model)
+```
+The bend in the residual plot means that our model underestimates the fuel efficiency of cars at the extremes (high or low fuel efficiencies) and overestimates the fuel efficiency of cars with average fuel efficiency. Although there do not appear to be any unusually large outliers on the residuals plot, the leverage plot does indenity a point with unusually high leverage.
+
+(e)
+```{r}
+linear.model <- lm(mpg~Auto$cylinders + Auto$displacement + Auto$weight + Auto$acceleration + Auto$year + Auto$origin + Auto$weight:Auto$horsepower + Auto$horsepower ,Auto)
+summary(linear.model)
+```
+When we consider the interaction term weight/horsepower, displacement becomes statistically insignificiant from being significant before.
+
+(f)
+```{r}
+linear.model <- lm(1/Auto$mpg~Auto$cylinders + Auto$displacement + Auto$weight + Auto$acceleration + Auto$year + Auto$origin + Auto$horsepower ,Auto)
+summary(linear.model)
+```
+By predicting the reciprocal of mpg, we are able to get higher a R^2 value. This makes sense because the relationship between mpg and many of the predictors in the scatterplot matrix was nonlinear.
+
+4.5
+
+(a) We would expect the training error to be smaller for QDA. Because LDA's parameters are just a strict subset of QDA's parameters, the QDA model is more flexible. Because the QDA is more flexible, it will be able to reduce its training error by memorizing random fluctuations in the training data that LDA cannot even though the decision boundary is actually linear. We would expect the testing error to be larger for QDA.  However, the variations memorized by QDA will not exist in the testing data. Because LDA matches the true linear decision boundary while QDA is fitting to some random variation, LDA will have the lower testing error.
+
+(b) For the same reasons outlined in (a), QDA would have the smaller training eror. However, without knowing the exact decision boundary of the data, it is impossible to say whether QDA or LDA will have the lower testing error. This is because we do not know whether the true decision boundary is closer to quadratic or linear.
+
+(c) Because QDA is a more flexible model that LDA, it requires more data to reach its maximum accuracy. Therefore, as the amount of data is increased, QDA's testing accuracy will improve relative to that of LDA.
+
+(d)  For the same reasons outlined in (a), QDA would have inferior testing results for a linear decision boundary because its increased flexibily would be used to memorize random fluctuations in the data. This discrepancy would decrease as the amount of data increases.
+
+4.10
+
+(a)
+```{r}
+data("Weekly")
+pairs(Weekly)
+```
+Volume seems to have increased rapidly over time. I cannot see any patterns with the lag variables.
+
+(b)
+```{r}
+logistic.model <- glm(as.numeric(Weekly$Direction) - 1~Weekly$Lag1 + Weekly$Lag2 + Weekly$Lag3 + Weekly$Lag4 + Weekly$Lag5 + Weekly$Volume, Weekly, family = binomial())
+summary(logistic.model)
+```
+Only Lag2 appears to be a statistically significant predictor.
+
+(c)
+```{r}
+table(Weekly$Direction, round(predict(logistic.model, Weekly, type = "response")))
+(557+54) / nrow(Weekly)
+```
+The logistic regression model has 56% accuracy. Its greatest source of innacuracy is predicting Downs are Ups 80% of the time.
+
+(d)
+```{r}
+logistic.model <- glm(Direction~Lag2, Weekly[Weekly$Year >= 1990 && Weekly$Year <= 2008,], family = binomial())
+table(Weekly[Weekly$Year >= 2009,]$Direction, round(predict(logistic.model, Weekly[Weekly$Year >= 2009,], type = "response")))
+(9 + 56) / (9 + 56 + 34 + 5)
+```
+
+(e)
+```{r}
+library(MASS)
+lda.model <- lda(Direction~Lag2, Weekly[Weekly$Year >= 1990 && Weekly$Year <= 2008,], family = binomial())
+table(Weekly[Weekly$Year >= 2009,]$Direction, predict(lda.model, Weekly[Weekly$Year >= 2009,])$class)
+(9 + 56) / (9 + 56 + 34 + 5)
+```
+
+(f)
+```{r}
+library(MASS)
+qda.model <- qda(Direction~Lag2, Weekly[Weekly$Year >= 1990 && Weekly$Year <= 2008,], family = binomial())
+table(Weekly[Weekly$Year >= 2009,]$Direction, predict(qda.model, Weekly[Weekly$Year >= 2009,])$class)
+61 / (43 + 61)
+```
+
+(g)
+```{r}
+library(class)
+preds <- knn(train = as.data.frame(Weekly[Weekly$Year >= 1990 && Weekly$Year <= 2008,]$Lag2), test = as.data.frame(Weekly[Weekly$Year >= 2009,]$Lag2), cl = Weekly[Weekly$Year >= 1990 && Weekly$Year <= 2008,]$Direction, k = 1)
+table(Weekly[Weekly$Year >= 2009,]$Direction, preds)
+(42 + 61)/(43+61)
+```
+
+(g)
+K-nearest-neighbhors appears to provide the best results.
+
+(h)
+```{r}
+library(MASS)
+qda.model <- qda(Direction~Lag1+Lag2+Lag3+Lag4+Lag5+Volume+Today, Weekly[Weekly$Year >= 1990 && Weekly$Year <= 2008,], family = binomial())
+table(Weekly[Weekly$Year >= 2009,]$Direction, predict(qda.model, Weekly[Weekly$Year >= 2009,])$class)
+(37 + 60 )/ (37 + 67)
+```
+
+(h)
+```{r}
+library(MASS)
+lda.model <- lda(Direction~Lag1+Lag2+Lag3+Lag4+Lag5+Volume+Today, Weekly[Weekly$Year >= 1990 && Weekly$Year <= 2008,], family = binomial())
+table(Weekly[Weekly$Year >= 2009,]$Direction, predict(lda.model, Weekly[Weekly$Year >= 2009,])$class)
+(37 + 60 )/ (37 + 67)
+```
+
+
+```{r}
+library(class)
+preds <- knn(train = as.data.frame(Weekly[Weekly$Year >= 1990 && Weekly$Year <= 2008,]$Lag2), test = as.data.frame(Weekly[Weekly$Year >= 2009,]$Lag2), cl = Weekly[Weekly$Year >= 1990 && Weekly$Year <= 2008,]$Direction, k = 2)
+table(Weekly[Weekly$Year >= 2009,]$Direction, preds)
+```
+
+
+```{r}
+library(class)
+preds <- knn(train = as.data.frame(Weekly[Weekly$Year >= 1990 && Weekly$Year <= 2008,]$Lag2), test = as.data.frame(Weekly[Weekly$Year >= 2009,]$Lag2), cl = Weekly[Weekly$Year >= 1990 && Weekly$Year <= 2008,]$Direction, k = 5)
+table(Weekly[Weekly$Year >= 2009,]$Direction, preds)
+```
+
+
+
+```{r}
+library(class)
+preds <- knn(train = as.data.frame(Weekly[Weekly$Year >= 1990 && Weekly$Year <= 2008,]$Lag2), test = as.data.frame(Weekly[Weekly$Year >= 2009,]$Lag2), cl = Weekly[Weekly$Year >= 1990 && Weekly$Year <= 2008,]$Direction, k = 10)
+table(Weekly[Weekly$Year >= 2009,]$Direction, preds)
+```
+

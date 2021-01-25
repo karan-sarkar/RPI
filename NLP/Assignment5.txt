@@ -1,0 +1,30 @@
+Errors:
+Word - Ground Truth Coreference - System Coreference
+
+Xinhua - NA - coalition
+coalition - coalition - Xinhua
+Use Word embedding to computer base similarity between words
+Keep catalog of nouns related to topic and check if they are possible synonyms
+
+Confuses parts of Baghdad with parts of Iraq
+parts - NA - areas
+Compare similarity of nearby nouns 
+Compute embeddings for a full noun phrase
+Use AMR graph to check object of prepositional phrase
+
+Confuses specific example with general idea
+woman - NA - civilian
+areas - NA - Al-Azamiyah
+Check if words are possible synonyms
+Use AMR graph to check linkages and see if one is more specific
+
+Confuses US military with Iraqi military
+missile - NA - artillery
+warplanes - NA - aircraft
+Use AMR graph to compare ownership of entities
+Compare noun phrase embeddings
+
+B3
+Precision = (6 * 1 + 1 * (1/ 2) + 7 * 1 + 3 * (3/4) + 2 * 1 + 3 * 1 + 3 * 1 + 3 * 1 + 2 * 1 + 3 * 1) / 41 = 0.77
+Recall = (6 * 1 + 7 * 1 + 3 * 1  + 2 * 1 + 3 * 1 + 1 * (1/3) + 2 * (2/3) + 3 * 1 + 3 * 1 + 3 * 1) / 33 = 0.96
+F-Score = 0.85

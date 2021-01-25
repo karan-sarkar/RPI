@@ -1,0 +1,208 @@
+---
+title: "Machine Learning Homework 1"
+author: "Karan Sarkar"
+date: "September 9, 2019"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Problem 1.4
+
+(a)
+
+```{r}
+h <- function(x, w) {
+  sign(cbind(1, x) %*% t(w))
+}
+
+w0 <- runif(1, -100, 100)
+w1 <- runif(1, -100, 100)
+w2 <- runif(1, -100, 100)
+
+f <- function(x) {
+  weights = matrix(c(w0, w1, w2), ncol = 3)
+  h(x, weights)
+}
+
+x <- matrix(runif(40, -100, 100), ncol = 2)
+y <- f(x)
+
+plot(x, col = as.factor(y), xlab = "x1", ylab = "x2", main = "(a)")
+abline(a= -w0/w2, b= -w1/w2)
+```
+
+#Add on:
+```{r}
+results = cbind(1:25 / 5, 0)
+
+for i in 1:25 {
+  N = 1000
+  rad = 10
+  thk = 5
+  sep = results[i, 1]
+  r_red = runif(N, rad, rad + thk)
+  theta_red = runif(N, 0, pi)
+  x = cbind(r_red * cos(theta_red), r_red * sin(theta_red) + sep / 2)
+  x = rbind(x, cbind(r_red * cos(theta_red) + rad + thk / 2, - r_red * sin(theta_red) - sep / 2)   )
+  y = sign(x[,2])
+}
+
+
+```
+
+
+
+
+
+
+
+
+(b)
+```{r}
+i = 0
+w <- matrix(c(0,0,0), ncol = 3)
+while (TRUE) {
+  y_hat <- h(x, w)
+  if (sum(y_hat != y) == 0) {
+    break
+  }
+  mistakes = matrix(cbind(x, y, y_hat)[y_hat != y, ], ncol = 4)
+  x_t = matrix(mistakes[1, 1:2], ncol = 2)
+  w <- w + cbind(1, x_t) * mistakes[1, 3]
+  i <- i + 1
+}
+
+print(i)
+plot(x, col = as.factor(y), xlab = "x1", ylab = "x2", main = "(b)")
+#abline(a= -w0/w2, b= -w1/w2)
+abline(a= -w[1]/w[3], b= -w[2]/w[3], col = "blue")
+```
+
+```{r}
+mod <- lm(y~x)
+mod$coefficients
+print(i)
+plot(x, col = as.factor(y), xlab = "x1", ylab = "x2", main = "(b)")
+#abline(a= -w0/w2, b= -w1/w2)\
+w = mod$coefficients
+abline(a= -w[1]/w[3], b= -w[2]/w[3], col = "blue")
+```
+
+
+We can see here that the blue final hypothesis is very close to the black true function.
+
+```{r}
+h <- function(x, w) {
+  sign(cbind(1, x) %*% t(w))
+}
+
+w0 <- runif(1, -100, 100)
+w1 <- runif(1, -100, 100)
+w2 <- runif(1, -100, 100)
+
+f <- function(x) {
+  weights = matrix(c(w0, w1, w2), ncol = 3)
+  h(x, weights)
+}
+
+x <- matrix(runif(40, -100, 100), ncol = 2)
+y <- f(x)
+
+i = 0
+w <- matrix(c(0,0,0), ncol = 3)
+while (TRUE) {
+  y_hat <- h(x, w)
+  if (sum(y_hat != y) == 0) {
+    break
+  }
+  mistakes = matrix(cbind(x, y, y_hat)[y_hat != y, ], ncol = 4)
+  x_t = matrix(mistakes[1, 1:2], ncol = 2)
+  w <- w + cbind(1, x_t) * mistakes[1, 3]
+  i <- i + 1
+}
+
+print(i)
+plot(x, col = as.factor(y), xlab = "x1", ylab = "x2", main = "(c)")
+abline(a= -w0/w2, b= -w1/w2)
+abline(a= -w[1]/w[3], b= -w[2]/w[3], col = "blue")
+```
+Again we see that the final hypothesis converges close to the true function. The number of iterations at 14 is slightly greater than 5 however.
+
+```{r}
+h <- function(x, w) {
+  sign(cbind(1, x) %*% t(w))
+}
+
+w0 <- runif(1, -100, 100)
+w1 <- runif(1, -100, 100)
+w2 <- runif(1, -100, 100)
+
+f <- function(x) {
+  weights = matrix(c(w0, w1, w2), ncol = 3)
+  h(x, weights)
+}
+
+x <- matrix(runif(200, -100, 100), ncol = 2)
+y <- f(x)
+
+i = 0
+w <- matrix(c(0,0,0), ncol = 3)
+while (TRUE) {
+  y_hat <- h(x, w)
+  if (sum(y_hat != y) == 0) {
+    break
+  }
+  mistakes = matrix(cbind(x, y, y_hat)[y_hat != y, ], ncol = 4)
+  x_t = matrix(mistakes[1, 1:2], ncol = 2)
+  w <- w + cbind(1, x_t) * mistakes[1, 3]
+  i <- i + 1
+}
+
+print(i)
+plot(x, col = as.factor(y), xlab = "x1", ylab = "x2", main = "(c)")
+abline(a= -w0/w2, b= -w1/w2)
+abline(a= -w[1]/w[3], b= -w[2]/w[3], col = "blue")
+```
+
+We see that the convergence is much slower for 100 data points, taking up 7463 iterations. The final hypothesis still matches closely to the true function though.
+
+```{r}
+h <- function(x, w) {
+  sign(cbind(1, x) %*% t(w))
+}
+
+w0 <- runif(1, -100, 100)
+w1 <- runif(1, -100, 100)
+w2 <- runif(1, -100, 100)
+
+f <- function(x) {
+  weights = matrix(c(w0, w1, w2), ncol = 3)
+  h(x, weights)
+}
+
+x <- matrix(runif(2000, -100, 100), ncol = 2)
+y <- f(x)
+
+i = 0
+w <- matrix(c(0,0,0), ncol = 3)
+while (TRUE) {
+  y_hat <- h(x, w)
+  if (sum(y_hat != y) == 0) {
+    break
+  }
+  mistakes = matrix(cbind(x, y, y_hat)[y_hat != y, ], ncol = 4)
+  x_t = matrix(mistakes[1, 1:2], ncol = 2)
+  w <- w + cbind(1, x_t) * mistakes[1, 3]
+  i <- i + 1
+}
+
+print(i)
+plot(x, col = as.factor(y), xlab = "x1", ylab = "x2", main = "(d)")
+abline(a= -w0/w2, b= -w1/w2)
+abline(a= -w[1]/w[3], b= -w[2]/w[3], col = "blue")
+```
+
+We see that the convergence is much slower for 1000 data points, taking up 2372 iterations. The final hypothesis still matches closely to the true function though.

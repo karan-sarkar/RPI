@@ -1,0 +1,30 @@
+When using Jaccard Similarity we get the following results
+('https://en.wikipedia.org/wiki/George_W._Romney', 'https://en.wikipedia.org/wiki/Lyndon_B._Johnson', 0.00534697703390262)
+('https://en.wikipedia.org/wiki/Mitt_Romney', 'https://en.wikipedia.org/wiki/Gary_Johnson', 0.004328280415236937)
+('https://en.wikipedia.org/wiki/Mitt_Romney', 'https://en.wikipedia.org/wiki/Lyndon_B._Johnson', 0.0018774996513817586)
+('https://en.wikipedia.org/wiki/Mitt_Romney', 'https://en.wikipedia.org/wiki/Johnson_(composer)', 0.0007898894154818325)
+('https://en.wikipedia.org/wiki/Mitt_Romney', 'https://en.wikipedia.org/wiki/Norm_Johnson', 0.0007898894154818325)
+('https://en.wikipedia.org/wiki/Mitt_Romney', 'https://en.wikipedia.org/wiki/Johnson', 0.0007898894154818325)
+('https://en.wikipedia.org/wiki/Mitt_Romney', 'https://en.wikipedia.org/wiki/Samuel_Johnson/', 0.0007898894154818325)
+('https://en.wikipedia.org/wiki/Mitt_Romney', 'https://en.wikipedia.org/wiki/Johnson_County,_Texas', 0.0007898894154818325)
+('https://en.wikipedia.org/wiki/Mitt_Romney', 'https://en.wikipedia.org/wiki/Johnson_(rapper)', 0.0007898894154818325)
+('https://en.wikipedia.org/wiki/Mitt_Romney', 'https://en.wikipedia.org/wiki/John_Henry_Johnson', 0.0007898894154818325)
+('https://en.wikipedia.org/wiki/Mitt_Romney', 'https://en.wikipedia.org/wiki/Johnson_County,_Indiana', 0.0007898894154818325)
+
+The correct entity linking result is the second option not the first. I think a better way to do it would be to create document embeddings 
+somehow and measure similarity by the total distance. I believe one problem is that having fewer links like George W Romney 
+inflates the similarity. I propose taking the log of the union of the words to reduce the penalty for having many links. After implementing
+this change, using the log Jaccard similarity yielded better results.
+
+('https://en.wikipedia.org/wiki/Mitt_Romney', 'https://en.wikipedia.org/wiki/Gary_Johnson', 0.449574492681583)
+('https://en.wikipedia.org/wiki/Mitt_Romney', 'https://en.wikipedia.org/wiki/Lyndon_B._Johnson', 0.40309993864658533)
+('https://en.wikipedia.org/wiki/George_W._Romney', 'https://en.wikipedia.org/wiki/Lyndon_B._Johnson', 0.312196636811523)
+('https://en.wikipedia.org/wiki/Mitt_Romney', 'https://en.wikipedia.org/wiki/Johnson_(composer)', 0.13998509657368324)
+('https://en.wikipedia.org/wiki/Mitt_Romney', 'https://en.wikipedia.org/wiki/Norm_Johnson', 0.13998509657368324)
+('https://en.wikipedia.org/wiki/Mitt_Romney', 'https://en.wikipedia.org/wiki/Johnson', 0.13998509657368324)
+('https://en.wikipedia.org/wiki/Mitt_Romney', 'https://en.wikipedia.org/wiki/Samuel_Johnson/', 0.13998509657368324)
+('https://en.wikipedia.org/wiki/Mitt_Romney', 'https://en.wikipedia.org/wiki/Johnson_County,_Texas', 0.13998509657368324)
+('https://en.wikipedia.org/wiki/Mitt_Romney', 'https://en.wikipedia.org/wiki/Johnson_(rapper)', 0.13998509657368324)
+('https://en.wikipedia.org/wiki/Mitt_Romney', 'https://en.wikipedia.org/wiki/John_Henry_Johnson', 0.13998509657368324)
+('https://en.wikipedia.org/wiki/Mitt_Romney', 'https://en.wikipedia.org/wiki/Johnson_County,_Indiana', 0.13998509657368324)
+

@@ -1,0 +1,59 @@
+import sys
+import pandas as pd
+import numpy as np
+from scipy.stats import multivariate_normal
+from sklearn import metrics
+
+FILE = sys.argv[1]
+K = int(sys.argv[2])
+EPS = float(sys.argv[3])
+
+df = pd.read_csv(FILE)
+
+cluster_labels = {}
+for cluster in df.iloc[:, -1]:
+    if cluster not in cluster_labels.keys():
+        cluster_labels[cluster] = len(cluster_labels)
+true_clusters = np.array([cluster_labels[cluster] for cluster in df.iloc[:, -1]])
+
+data = np.array(df.iloc[:, 0:-1])
+N, D = data.shape
+
+means = np.random.rand(K, D)
+covs = np.stack([np.identity(D) for _ in range(K)], axis = 0)
+prior = np.full((K), 1 / K)
+posterior = np.zeros((N, K))
+
+old_means = means + 1
+it = 0
+while np.linalg.norm(means - old_means)  >= EPS:
+    it += 1
+    old_means = np.copy(means)
+    for i in range(K):
+        posterior[:, i] = multivariate_normal.pdf(data, mean = means[i, :], cov = covs[i, :]  +  0.01 * np.identity(D)) * prior[i]
+    
+    posterior = posterior / np.sum(posterior, axis = 1)[:, None]
+    print(posterior)
+    
+    
+    centered_data = np.zeros((K, N, D, D))
+    for i in range(K):
+        for j in range(N):
+            diff = data[j, :] - means[i, :]
+            centered_data[i, j, :, :] = diff @ diff.T 
+    
+    for i in range(K):
+        means[i, :] = np.average(data, axis = 0, weights = posterior[:, i] / np.sum(posterior[:, i]))
+        covs[i, :, :] = np.average(centered_data[i, :, :, :], axis = 0, weights = posterior[:, i] / np.sum(posterior[:, i]))
+        prior[i] = np.mean(posterior[:, i])
+ 
+pred_clusters = np.argmax(posterior, axis = 1)
+contingency_matrix = metrics.cluster.contingency_matrix(true_clusters, pred_clusters)
+u, counts = np.unique(pred_clusters, return_counts=True)
+print('Cluster Means', means)
+print('Cluster Covariances', covs)
+print('Iterations', it)
+print('Cluster Assignments', pred_clusters)
+print('Cluster Sizes', counts)
+print('Purity', np.sum(np.amax(contingency_matrix, axis=0)) / np.sum(contingency_matrix))
+

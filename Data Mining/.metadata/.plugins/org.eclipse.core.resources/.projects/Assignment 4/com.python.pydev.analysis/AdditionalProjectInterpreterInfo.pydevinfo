@@ -1,0 +1,37 @@
+-- VERSION_5
+-- START DISKCACHE_2
+C:\Users\Karan Sarkar\Google Drive\RPI\Data Mining\.metadata\.plugins\org.eclipse.core.resources\.projects\Assignment 4\com.python.pydev.analysis\v2_indexcache
+assign4|1574124021058641000|C:\Users\Karan Sarkar\Google Drive\RPI\Data Mining\Assignment 4\assign4.py
+-- END DISKCACHE
+-- START DICTIONARY
+2
+1=C:\Users\Karan Sarkar\Google Drive\RPI\Data Mining\Assignment 4\assign4.py
+2=assign4
+-- END DICTIONARY
+-- START TREE 1
+21
+b_h|1|b_h!1^32#1*19@
+b_o|1|b_o!1^33#1*19@
+del|2|delta_o!1^46#9*19@delta_h!1^47#9*19@
+epo|1|EPOCHS!1^7#1*19@
+hid|1|HIDDEN_WIDTH!1^5#1*19@
+inp|1|INPUT_WIDTH!1^14#1*19@
+lea|1|LEARNING_RATE!1^6#1*19@
+mat|1|matches!1^53#1*19@
+o|1|o!1^45#9*19@
+out|1|OUTPUT_WIDTH!1^27#1*19@
+sig|1|sigmoid!1^37#5*18@
+tes|1|TEST_FILE!1^3#1*19@
+tra|1|TRAIN_FILE!1^2#1*19@
+w_h|1|W_h!1^34#1*19@
+w_o|1|W_o!1^35#1*19@
+x|1|x!1^42#9*19@
+x_t|2|X_test!1^12#1*19@X_train!1^11#1*19@
+y|1|y!1^43#9*19@
+y_p|1|y_pred!1^57#5*19@
+y_t|3|y_train!1^16#1*19@y_test!1^17#1*19@Y_train!1^28#1*19@
+z|1|z!1^44#9*19@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

@@ -1,0 +1,72 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage[shortlabels]{enumitem}
+\newtheorem{problem}{Problem}
+
+\title{Homework 2}
+\author{Karan Sarkar \\ sarkak2@rpi.edu}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{problem} Suppose $f: S \rightarrow S$ for some non-empty set $S$. Prove that if $f \circ f$ is injective, then $f$ is injective. 
+\end{problem}
+\begin{proof}
+Suppose that $f \circ f$ is injective. Let $s_1, s_2 \in S$.  Suppose that $f(s_1) = f(s_2)$. Because $f$ has domain $S$ and codomain $S$, note that $f(f(s_1)) = f(f(s_2))$. Therefore, $f \circ f(s_1) = f \circ f(s_2)$. Because $f \circ f$ is injective, we deduce that $s_1 = s_2$. Because $s_1 = s_2$ when $f(s_1) = f(s_2)$, we know that $f$ is injective.
+\end{proof}
+
+\begin{problem}
+Let $A = \mathbb{N} \times \mathbb{N}$ and define a relation $\mathsf{R}$ on $A$ by $(a,b)\mathsf{R}(c,d)$ if and only if $a^b=c^d$
+\begin{enumerate}[A.]
+\item Show that $\mathsf{R}$ is an equivalence relation on $A$
+\item List the elements in the equivalence class $E_{(9,2)}$
+\item Find an equivalence class with exactly two elements.
+\item Find an equivalence class with exactly four elements.
+\end{enumerate}
+
+\medskip
+
+\end{problem}
+\begin{enumerate}[A.]
+    \item \begin{proof}
+        To show that $\mathsf{R}$ is an equivalence relation, it suffices to prove:
+        \begin{enumerate}[(i)]
+            \item For all $(x, y) \in \mathsf{R}$, $(x, x) \in R$.
+            \item For all $(x, y) \in \mathsf{R}$, $(y, x) \in R$.
+            \item For all $(x, y), (y, z) \in \mathsf{R}$, $(x, z) \in R$.
+        \end{enumerate}
+        
+        We will begin with (i). Suppose $(x, y) \in \mathsf{R}$. Let $x = (a, b)$. Note that $a^b = a^b$. Therefore, we have that $((a, b), (a, b)) \in \mathsf{R}$. Thus, $(x, x) \in \mathsf{R}$.
+        
+        We will now handle (ii). Suppose $(x, y) \in \mathsf{R}$. Let $x = (a, b)$ and $y = (c, d)$. Therefore, from the definition of $\mathsf{R}$, we have that $a^b = c^d$. It follows that $c^d = a^b$. Therefore, we must have that $((c, d), (a, b)) \in \mathsf{R}$. Thus, $(y, x) \in \mathsf{R}$.
+        
+        We will deal with (iii). Suppose $(x, y), (y, z) \in \mathsf{R}$. Let $x = (a, b)$, $y = (c, d)$ and $z = (e, f)$. Therefore, from the definition of $\mathsf{R}$, we have that $a^b = c^d$ and $c^d = e^f$. It follows that $a^b = e^f$. Therefore, we must have that $((a, b), (e, f)) \in \mathsf{R}$. Thus, $(x, z) \in \mathsf{R}$. Because we have shown (i), (ii) and (iii), it follows that $\mathsf{R}$ is an equivalence relation.
+    \end{proof}
+    \item The elements of $E_{(9,2)}$ are $(3,4), (9,2)$ and $(81, 1)$.
+    \item The equivalence class $E_{(9,1)}$ contains just the two elements $(9, 1)$ and $(3, 2)$.
+    \item The equivalence class $E_{(64,1)}$ contains the four elements $(2, 6), (4, 3), (8, 2)$ and $(64, 1)$.
+\end{enumerate}
+
+\begin{problem}Suppose that $f:A \rightarrow B$ and let $D_1$ and $D_2$ be subsets of $B$. Prove that 
+$$ f^{-1}\left(D_1 \cap D_2 \right) = f^{-1}\left(D_1\right) \cap f^{-1}\left(D_2\right). $$\end{problem}
+
+\begin{proof}
+In order to probe that $f^{-1}\left(D_1 \cap D_2 \right) = f^{-1}\left(D_1\right) \cap f^{-1}\left(D_2\right)$, we must show that:
+\begin{enumerate}[(i)]
+    \item $f^{-1}\left(D_1 \cap D_2 \right) \subseteq f^{-1}\left(D_1\right) \cap f^{-1}\left(D_2\right)$
+    \item $f^{-1}\left(D_1\right) \cap f^{-1}\left(D_2\right) \subseteq f^{-1}\left(D_1 \cap D_2 \right)$
+\end{enumerate}
+
+We will begin with (i). Suppose that $f^{-1}\left(D_1 \cap D_2 \right)$ is nonempty, otherwise (i) is vacuously true. Let $x \in f^{-1}\left(D_1 \cap D_2 \right)$. From the definition of preimage, $f(x) \in D_1 \cap D_2$. Therefore, $f(x) \in D_1$ and $f(x) \in D_2$. From the definition of preimage again, we see that $x \in f^{-1}(D_1)$ and $x \in f^{-1}(D_2)$. Thus, $x \in f^{-1}\left(D_1\right) \cap f^{-1}\left(D_2\right)$. It now follows that $f^{-1}\left(D_1 \cap D_2 \right) \subseteq f^{-1}\left(D_1\right) \cap f^{-1}\left(D_2\right)$.
+
+We will now handle (ii). Suppose that $f^{-1}\left(D_1\right) \cap f^{-1}\left(D_2\right)$ is nonempty, otherwise (ii) is vacuously true. Let $x \in f^{-1}\left(D_1\right) \cap f^{-1}\left(D_2\right)$. It follows that $x \in f^{-1}(D_1)$ and $x \in f^{-1}(D_2)$. From the definition of preimage, $f(x) \in D_1$ and $f(x) \in D_2$. Therefore, $f(x) \in D_1 \cap D_2$. From the definition of preimage again, we see that $x \in f^{-1}\left(D_1 \cap D_2 \right)$. It now follows that $f^{-1}\left(D_1\right) \cap f^{-1}\left(D_2\right) \subseteq f^{-1}\left(D_1 \cap D_2 \right)$. Because we have shown both (i) and (ii), it follows that $f^{-1}\left(D_1 \cap D_2 \right) = f^{-1}\left(D_1\right) \cap f^{-1}\left(D_2\right)$.
+
+
+\end{proof}
+
+\end{document}
+

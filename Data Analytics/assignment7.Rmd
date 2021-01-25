@@ -1,0 +1,94 @@
+---
+title: "Assignment 7"
+---
+
+# Section 1
+
+We will be using the wine datasets from the UCI Machine Learning dataset collection.
+```{r}
+red <- read.csv("winequality-red.csv")
+white <- read.csv("winequality-white.csv")
+library(RColorBrewer)
+colors <- brewer.pal(6, "Spectral")
+red$color <- colors[red$quality-2]
+white$color <- colors[white$quality-2]
+```
+
+
+```{r}
+pairs(red[,1:11], col = red$color)
+pairs(white[,1:11], col = white$color)
+```
+
+Examining the scatterplots shows that several variables are corelated. Factor analysis or principal components analysis might provide some insights into latent variables behind the correlations. We can also see that none of the variables are too severely skewed. THere are not outliers in the data, so nothing has to be removed.
+
+
+```{r}
+red.pca <- prcomp(red[,1:11])
+white.pca <- prcomp(white[,1:11])
+plot(red.pca$x[,1], red.pca$x[,2],col=red$color)
+plot(white.pca$x[,1], white.pca$x[,2],col=white$color)
+```
+Looking a the Principal components plots, we can see that certain quality levels are clustered together. However the boundary between quality levels is fuzzy. Therefore, some sort of nonlinear regression seems like a good idea. Because the distinctions between levels is arbitary, linear regression does not really make sense. Moreover, because the boundaries are not distinct, clustering is not likely to work.
+
+# Section 2
+
+We will be attempting to predict wine quality for white wine. We will do validation using a training set and a training set. We will use training set and test set validation because it is relatively simple to implement.
+```{r}
+train <- sample(nrow(white), 2000)
+white.train <- white[train,]
+white.test <- white[-train,]
+```
+
+```{r}
+lm <- lm(as.numeric(quality)~., white.train[1:12])
+summary(lm)
+lm.preds <- predict(lm, white.test)
+plot(lm.preds, white.test$quality)
+lm.mse <- sum((lm.preds - white.test$quality)^2)
+lm.mse
+```
+We construct a simple linear model to predict wine quality. We are using a linear model as a baseline so we can judge the accuracy of the random forest model that we will use later. Moreover, the linear model is very easy to interpret. We can see that factors like volatile acidity and alcohol are statistically significant. The small p-value associated with the F-statistic indicates that the linear model is statistically significant. The negative coefficient on density shows that low densities are prefered while the positive coefficient on alcohol shows that high alcohol levels are preferred. The scatterplot of predicted quality vs actual quality shows a positive trend. However, it reveals that our model is not very precise. We get a total mean squared error of 1638 on the test data.
+
+
+```{r}
+library(randomForest)
+library(forestFloor)
+rf = randomForest(
+  quality~.,
+  white.train[1:12],
+  keep.inbag = TRUE, 
+  importance = TRUE,  
+  mtry = 3,
+  prox = TRUE,
+  ntree = 1000,
+)
+rf.preds <- predict(rf, white.test)
+plot(rf.preds, white.test$quality)
+rf.mse <- sum((rf.preds - white.test$quality)^2)
+rf.mse
+ff = forestFloor(
+  rf = rf ,       # mandatory
+  X = white.train,              # mandatory
+  calc_np = FALSE,    # TRUE or FALSE both works, makes no difference
+  binary_reg = FALSE  # takes no effect here when rfo$type="regression"
+)
+plot(ff,  col = white.train$color  ,                 # forestFloor object
+     orderByImportance=FALSE    # if TRUE index sequence by importance, else by X column  
+)
+```
+
+We use a random forest model to predict wine quality. We see that the test mean squared error of 1228 is lower than the linear model's test mean squared error of 1638. This improvement in test accuracy over a linear model we previously determined to be statistically significant shows that the random forest model is also statistically significant. We are using a random forest model because it is very good at making predictions based on quantitative predictors. Unlike the linear model, the random forest model can handle nonlinear trends. For example, in the forest floor plots, we see that the optimal value of total sulfur dioxide is around 100 not at the extremes of the range.On the other hand, we can see that the sulphates variable is not very important. The scatterplot shows that the random forest is still an inexact measure of wine quality.
+
+# Section 3
+```{r}
+varImpPlot(rf)
+randomForest::MDSplot(rf, fac = as.factor(white.train$quality), k=3)
+```
+
+
+The random forest models does not provide us a very tight fit that is super useful for predicting quality. The proximity plots show us that the qualites do not separate perfectly. However, we can see what variables lead to high wine quality. In particular, we can see that lower densitiy and higher alcohol in general lead to higher scores. Moreover, we can see an optimal range for citric acid. Understanding the optimal values for each factor allows us to make decisions in that winemakers could improve wine my finetuning these variables. A winemaker could try to set target citric acid levels among other things because these critical regions are statistically significant. On ther other hand, using this model to predict quality is not reccomended because the variance within qualities is so great.
+
+
+
+

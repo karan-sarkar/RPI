@@ -1,0 +1,55 @@
+```{r}
+library(openxlsx)
+bronx <- read.xlsx("rollingsales_bronx.xlsx")
+```
+
+1.
+
+(a) I would try to predict the sale price. This could be done based on factors like year built and square footage. I plan to model them with a linear regression.
+
+Descriptive Analysis:
+Many of the the data points had 0 as a sale price, so I filtered them out. They probably represent missing data.
+
+```{r}
+bronx <- bronx[bronx$SALE.PRICE > 0, ]
+hist((bronx$SALE.PRICE))
+hist(log10(bronx$SALE.PRICE))
+```
+
+Many of the variables become more normal distributions after taking a logarithm.
+```{r}
+bronx$LOG_RES_UNITS <- log10(bronx$RESIDENTIAL.UNITS + 1)
+bronx$LOG_COM_UNITS <- log10(bronx$COMMERCIAL.UNITS + 1)
+bronx$LOG_LAND_SQ <- log10(bronx$LAND.SQUARE.FEET + 1)
+bronx$LOG_GROSS_SQ <- log10(bronx$GROSS.SQUARE.FEET + 1)
+bronx$LOG_PRICE <- log10(bronx$SALE.PRICE)
+vars = c("LOG_RES_UNITS", "LOG_COM_UNITS", "LOG_LAND_SQ", "LOG_GROSS_SQ", "LOG_PRICE")
+pairs(bronx[,vars])
+```
+
+The pairs plot seems to indicate linear relationships between the log-re-expressed variables. Therefore, multivariate regression 
+might be an appropriate choice,
+
+(b) We will be using linear regression to predict housing prices.
+```{r}
+model <- lm(LOG_PRICE~., data = bronx[, vars])
+summary(model)
+```
+The R^2 of 0.1154 does not indicate a very tight fit. However, the p-value generated from the F-statistic indicates that the linear relationship is indeed significant even if it does not explain most of the variation. For cleanining, I had to remove all entries with a sale price of zero. This was because, the number of zeroes was significant and did not fit the overall lognormal distribution. I believe the zeroes represent missing data.
+
+2.
+(a)
+```{r}
+bronx$PREDS <- predict(model, bronx[,vars])
+plot(bronx$LOG_PRICE, bronx$PREDS)
+```
+We can  see that our model works generally pretty well. However, it overestimates sales with low prices pretty significantly. This indicates that the data has a nonlinearity as the price drops.
+
+(b)
+```{r}
+summary(model)
+```
+We performed an F-test to test the significances of the linear model. The p-value of 2.2e-16 indicates a very high level of significance, This means that the total linear combination of predictors found by our model does have a positive relationship with the actual sale price. The low correlation indicates that although we are sure a relationship exists, it might not be that strong.
+
+(c) I am concerned about omitting the zeroes from our data. Our filtered data set might not be representative of the original. In general, there is something nonlinear occuring when housing prices drop that our model is not able to predict correctly. Understanding that nonlinearity warrants additional study.
+

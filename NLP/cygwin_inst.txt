@@ -1,0 +1,7 @@
+.\word2vec -train C:\Users\Karan Sarkar\Google Drive\RPI\NLP\enwiki.sample.txt -output C:\Users\Karan Sarkar\Google Drive\RPI\NLP\embedding.txt -size 50 -
+window 5 -negative 10 -cbow 1 -threads 10 -iter 5 -min-count 5
+
+python27 train.py --train C:\Users\Karan Sarkar\Google Drive\RPI\NLP\eng.train.clean.bio --dev C:\Users\Karan Sarkar\Google Drive\RPI\NLP\eng.dev.clean.bio --test C:\Users\Karan Sarkar\Google Drive\RPI\NLP\eng.test.clean.bio --char_dim 50 --word_dim 50 --pre_emb C:\Users\Karan Sarkar\Google Drive\RPI\NLP\embedding.txt
+
+
+python27 train.py --train "C:\Users\Karan Sarkar\Google Drive\RPI\NLP\eng.train.clean.bio" --dev "C:\Users\Karan Sarkar\Google Drive\RPI\NLP\eng.dev.clean.bio" --test "C:\Users\Karan Sarkar\Google Drive\RPI\NLP\eng.test.clean.bio" --char_dim 50 --word_dim 50 --pre_emb "C:\Users\Karan Sarkar\Google Drive\RPI\NLP\embedding.txt"

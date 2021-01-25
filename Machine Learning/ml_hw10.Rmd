@@ -1,0 +1,45 @@
+```{r}
+X <- matrix(c(1, 0, 0, -1, 0, 0, -2, 0, 1, -1, 0, 2, -2, 0), nrow = 7)
+seq <- seq(-4, 4, by = 0.05)
+Xnew = expand.grid(seq, seq)
+y = c(-1,-1,-1,-1,1,1,1)
+```
+
+
+
+```{r}
+library(class)
+NN_1 <- knn(X, Xnew, y, k = 3, prob = TRUE)
+prob <- attr(NN_1, "prob")
+prob <- ifelse(NN_1 == "1", prob, 1 - prob)
+prob_mat <- matrix(prob, length(seq), length(seq))
+contour(seq, seq, prob_mat, levels = 0.5, labels = "-", xlab = "x1", ylab = "x2", main = '3-NN')
+points(X, col = as.factor(y))
+```
+
+```{r}
+Z1 = apply(X, 1, function(x) sqrt(x[1]^2 + x[2]^2))
+Z2 = apply(X, 1, function(x) atan(x[2] / x[1]))
+Z <- matrix(c(Z1, Z2), byrow = FALSE, ncol = 2)
+Znew1 = apply(Xnew, 1, function(x) sqrt(x[1]^2 + x[2]^2))
+Znew2 = apply(Xnew, 1, function(x) atan(x[2] / x[1]))
+Znew <- data.frame(matrix(c(Znew1, Znew2), byrow = FALSE, ncol = 2))
+```
+
+```{r}
+library(class)
+NN <- knn(train = Z, test = Xnew, cl = y, k = 3, prob = TRUE)
+prob <- attr(NN, "prob")
+prob <- ifelse(NN == "1", prob, 1 - prob)
+prob_mat <- matrix(prob, length(seq), length(seq))
+contour(seq, seq, prob_mat, levels = 0.5, labels = "-", xlab = "x1", ylab = "x2", main = '1-NN')
+points(X, col = as.factor(y))
+```
+
+```{r}
+Xnew
+```
+
+```
+
+

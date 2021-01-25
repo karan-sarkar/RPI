@@ -1,0 +1,387 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Assignment 7},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Assignment 7}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{}
+    \preauthor{}\postauthor{}
+    \date{}
+    \predate{}\postdate{}
+  
+
+\begin{document}
+\maketitle
+
+\section{Section 1}\label{section-1}
+
+We will be using the wine datasets from the UCI Machine Learning dataset
+collection.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{red <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"winequality-red.csv"}\NormalTok{)}
+\NormalTok{white <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"winequality-white.csv"}\NormalTok{)}
+\KeywordTok{library}\NormalTok{(RColorBrewer)}
+\NormalTok{colors <-}\StringTok{ }\KeywordTok{brewer.pal}\NormalTok{(}\DecValTok{6}\NormalTok{, }\StringTok{"Spectral"}\NormalTok{)}
+\NormalTok{red}\OperatorTok{$}\NormalTok{color <-}\StringTok{ }\NormalTok{colors[red}\OperatorTok{$}\NormalTok{quality}\OperatorTok{-}\DecValTok{2}\NormalTok{]}
+\NormalTok{white}\OperatorTok{$}\NormalTok{color <-}\StringTok{ }\NormalTok{colors[white}\OperatorTok{$}\NormalTok{quality}\OperatorTok{-}\DecValTok{2}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{pairs}\NormalTok{(red[,}\DecValTok{1}\OperatorTok{:}\DecValTok{11}\NormalTok{], }\DataTypeTok{col =}\NormalTok{ red}\OperatorTok{$}\NormalTok{color)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{assignment7_files/figure-latex/unnamed-chunk-2-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{pairs}\NormalTok{(white[,}\DecValTok{1}\OperatorTok{:}\DecValTok{11}\NormalTok{], }\DataTypeTok{col =}\NormalTok{ white}\OperatorTok{$}\NormalTok{color)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{assignment7_files/figure-latex/unnamed-chunk-2-2.pdf}
+
+Examining the scatterplots shows that several variables are corelated.
+Factor analysis or principal components analysis might provide some
+insights into latent variables behind the correlations. We can also see
+that none of the variables are too severely skewed. THere are not
+outliers in the data, so nothing has to be removed.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{red.pca <-}\StringTok{ }\KeywordTok{prcomp}\NormalTok{(red[,}\DecValTok{1}\OperatorTok{:}\DecValTok{11}\NormalTok{])}
+\NormalTok{white.pca <-}\StringTok{ }\KeywordTok{prcomp}\NormalTok{(white[,}\DecValTok{1}\OperatorTok{:}\DecValTok{11}\NormalTok{])}
+\KeywordTok{plot}\NormalTok{(red.pca}\OperatorTok{$}\NormalTok{x[,}\DecValTok{1}\NormalTok{], red.pca}\OperatorTok{$}\NormalTok{x[,}\DecValTok{2}\NormalTok{],}\DataTypeTok{col=}\NormalTok{red}\OperatorTok{$}\NormalTok{color)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{assignment7_files/figure-latex/unnamed-chunk-3-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot}\NormalTok{(white.pca}\OperatorTok{$}\NormalTok{x[,}\DecValTok{1}\NormalTok{], white.pca}\OperatorTok{$}\NormalTok{x[,}\DecValTok{2}\NormalTok{],}\DataTypeTok{col=}\NormalTok{white}\OperatorTok{$}\NormalTok{color)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{assignment7_files/figure-latex/unnamed-chunk-3-2.pdf}
+Looking a the Principal components plots, we can see that certain
+quality levels are clustered together. However the boundary between
+quality levels is fuzzy. Therefore, some sort of nonlinear regression
+seems like a good idea. Because the distinctions between levels is
+arbitary, linear regression does not really make sense. Moreover,
+because the boundaries are not distinct, clustering is not likely to
+work.
+
+\section{Section 2}\label{section-2}
+
+We will be attempting to predict wine quality for white wine. We will do
+validation using a training set and a training set. We will use training
+set and test set validation because it is relatively simple to
+implement.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{train <-}\StringTok{ }\KeywordTok{sample}\NormalTok{(}\KeywordTok{nrow}\NormalTok{(white), }\DecValTok{2000}\NormalTok{)}
+\NormalTok{white.train <-}\StringTok{ }\NormalTok{white[train,]}
+\NormalTok{white.test <-}\StringTok{ }\NormalTok{white[}\OperatorTok{-}\NormalTok{train,]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lm <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(}\KeywordTok{as.numeric}\NormalTok{(quality)}\OperatorTok{~}\NormalTok{., white.train[}\DecValTok{1}\OperatorTok{:}\DecValTok{12}\NormalTok{])}
+\KeywordTok{summary}\NormalTok{(lm)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = as.numeric(quality) ~ ., data = white.train[1:12])
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -3.2700 -0.4836 -0.0648  0.4316  2.5185 
+## 
+## Coefficients:
+##                        Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)           9.927e+01  2.450e+01   4.051 5.29e-05 ***
+## fixed.acidity        -6.257e-03  3.048e-02  -0.205   0.8373    
+## volatile.acidity     -1.740e+00  1.704e-01 -10.211  < 2e-16 ***
+## citric.acid           2.020e-01  1.485e-01   1.361   0.1738    
+## residual.sugar        6.209e-02  1.049e-02   5.920 3.79e-09 ***
+## chlorides             2.902e-01  7.486e-01   0.388   0.6983    
+## free.sulfur.dioxide   2.789e-03  1.292e-03   2.158   0.0311 *  
+## total.sulfur.dioxide -4.269e-05  5.787e-04  -0.074   0.9412    
+## density              -9.837e+01  2.490e+01  -3.950 8.08e-05 ***
+## pH                    3.882e-01  1.563e-01   2.483   0.0131 *  
+## sulphates             7.235e-01  1.561e-01   4.635 3.80e-06 ***
+## alcohol               2.609e-01  3.206e-02   8.140 6.88e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 0.7362 on 1988 degrees of freedom
+## Multiple R-squared:  0.2803, Adjusted R-squared:  0.2763 
+## F-statistic: 70.39 on 11 and 1988 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lm.preds <-}\StringTok{ }\KeywordTok{predict}\NormalTok{(lm, white.test)}
+\KeywordTok{plot}\NormalTok{(lm.preds, white.test}\OperatorTok{$}\NormalTok{quality)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{assignment7_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lm.mse <-}\StringTok{ }\KeywordTok{sum}\NormalTok{((lm.preds }\OperatorTok{-}\StringTok{ }\NormalTok{white.test}\OperatorTok{$}\NormalTok{quality)}\OperatorTok{^}\DecValTok{2}\NormalTok{)}
+\NormalTok{lm.mse}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1696.333
+\end{verbatim}
+
+We construct a simple linear model to predict wine quality. We are using
+a linear model as a baseline so we can judge the accuracy of the random
+forest model that we will use later. Moreover, the linear model is very
+easy to interpret. We can see that factors like volatile acidity and
+alcohol are statistically significant. The small p-value associated with
+the F-statistic indicates that the linear model is statistically
+significant. The negative coefficient on density shows that low
+densities are prefered while the positive coefficient on alcohol shows
+that high alcohol levels are preferred. The scatterplot of predicted
+quality vs actual quality shows a positive trend. However, it reveals
+that our model is not very precise. We get a total mean squared error of
+1638 on the test data.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(randomForest)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## randomForest 4.6-14
+\end{verbatim}
+
+\begin{verbatim}
+## Type rfNews() to see new features/changes/bug fixes.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(forestFloor)}
+\NormalTok{rf =}\StringTok{ }\KeywordTok{randomForest}\NormalTok{(}
+\NormalTok{  quality}\OperatorTok{~}\NormalTok{.,}
+\NormalTok{  white.train[}\DecValTok{1}\OperatorTok{:}\DecValTok{12}\NormalTok{],}
+  \DataTypeTok{keep.inbag =} \OtherTok{TRUE}\NormalTok{, }
+  \DataTypeTok{importance =} \OtherTok{TRUE}\NormalTok{,  }
+  \DataTypeTok{mtry =} \DecValTok{3}\NormalTok{,}
+  \DataTypeTok{prox =} \OtherTok{TRUE}\NormalTok{,}
+  \DataTypeTok{ntree =} \DecValTok{1000}\NormalTok{,}
+\NormalTok{)}
+\NormalTok{rf.preds <-}\StringTok{ }\KeywordTok{predict}\NormalTok{(rf, white.test)}
+\KeywordTok{plot}\NormalTok{(rf.preds, white.test}\OperatorTok{$}\NormalTok{quality)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{assignment7_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{rf.mse <-}\StringTok{ }\KeywordTok{sum}\NormalTok{((rf.preds }\OperatorTok{-}\StringTok{ }\NormalTok{white.test}\OperatorTok{$}\NormalTok{quality)}\OperatorTok{^}\DecValTok{2}\NormalTok{)}
+\NormalTok{rf.mse}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1304.367
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ff =}\StringTok{ }\KeywordTok{forestFloor}\NormalTok{(}
+  \DataTypeTok{rf =}\NormalTok{ rf ,       }\CommentTok{# mandatory}
+  \DataTypeTok{X =}\NormalTok{ white.train,              }\CommentTok{# mandatory}
+  \DataTypeTok{calc_np =} \OtherTok{FALSE}\NormalTok{,    }\CommentTok{# TRUE or FALSE both works, makes no difference}
+  \DataTypeTok{binary_reg =} \OtherTok{FALSE}  \CommentTok{# takes no effect here when rfo$type="regression"}
+\NormalTok{)}
+\KeywordTok{plot}\NormalTok{(ff,  }\DataTypeTok{col =}\NormalTok{ white.train}\OperatorTok{$}\NormalTok{color  ,                 }\CommentTok{# forestFloor object}
+     \DataTypeTok{orderByImportance=}\OtherTok{FALSE}    \CommentTok{# if TRUE index sequence by importance, else by X column  }
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "compute goodness-of-fit with leave-one-out k-nearest neighbor(guassian weighting), kknn package"
+\end{verbatim}
+
+\includegraphics{assignment7_files/figure-latex/unnamed-chunk-6-2.pdf}
+
+We use a random forest model to predict wine quality. We see that the
+test mean squared error of 1228 is lower than the linear model's test
+mean squared error of 1638. This improvement in test accuracy over a
+linear model we previously determined to be statistically significant
+shows that the random forest model is also statistically significant. We
+are using a random forest model because it is very good at making
+predictions based on quantitative predictors. Unlike the linear model,
+the random forest model can handle nonlinear trends. For example, in the
+forest floor plots, we see that the optimal value of total sulfur
+dioxide is around 100 not at the extremes of the range.On the other
+hand, we can see that the sulphates variable is not very important. The
+scatterplot shows that the random forest is still an inexact measure of
+wine quality.
+
+\section{Section 3}\label{section-3}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{varImpPlot}\NormalTok{(rf)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{assignment7_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{randomForest}\OperatorTok{::}\KeywordTok{MDSplot}\NormalTok{(rf, }\DataTypeTok{fac =} \KeywordTok{as.factor}\NormalTok{(white.train}\OperatorTok{$}\NormalTok{quality), }\DataTypeTok{k=}\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{assignment7_files/figure-latex/unnamed-chunk-7-2.pdf}
+
+The random forest models does not provide us a very tight fit that is
+super useful for predicting quality. The proximity plots show us that
+the qualites do not separate perfectly. However, we can see what
+variables lead to high wine quality. In particular, we can see that
+lower densitiy and higher alcohol in general lead to higher scores.
+Moreover, we can see an optimal range for citric acid. Understanding the
+optimal values for each factor allows us to make decisions in that
+winemakers could improve wine my finetuning these variables. A winemaker
+could try to set target citric acid levels among other things because
+these critical regions are statistically significant. On ther other
+hand, using this model to predict quality is not reccomended because the
+variance within qualities is so great.
+
+
+\end{document}
